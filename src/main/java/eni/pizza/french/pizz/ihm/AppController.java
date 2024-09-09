@@ -1,4 +1,4 @@
-package eni.pizza.french.pizz;
+package eni.pizza.french.pizz.ihm;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
