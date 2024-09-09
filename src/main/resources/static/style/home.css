@@ -1,0 +1,45 @@
+body,html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+header {
+    background-image: url("../image/pizza-background.jpg");
+    background-size: cover;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+.barre-haute {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.image-logo {
+    height: 20vh;
+    margin-top: 7vh;
+    margin-left: 7vw;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+}
+
+li {
+    font-family: poppins, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    margin-left: 7vw;
+    list-style-type: none;
+}
