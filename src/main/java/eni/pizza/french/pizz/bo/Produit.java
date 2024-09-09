@@ -2,19 +2,30 @@ package eni.pizza.french.pizz.bo;
 
 import org.springframework.format.number.money.MonetaryAmountFormatter;
 
-public class Produit {
+public abstract class Produit {
+    private Long id_produit;
     private String nom;
-    private Long idProduit;
     private String description;
     private MonetaryAmountFormatter prix;
     private String image_url;
+    public Produit() {
+        super();
+    }
 
-    public Produit(String nom, Long idProduit, String description, MonetaryAmountFormatter prix, String image_url) {
+    public Produit(Long id_produit, String nom, String description, MonetaryAmountFormatter prix, String image_url) {
+        this.id_produit = id_produit;
         this.nom = nom;
-        this.idProduit = idProduit;
         this.description = description;
         this.prix = prix;
         this.image_url = image_url;
+    }
+
+    public Long getId_produit() {
+        return id_produit;
+    }
+
+    public void setId_produit(Long id_produit) {
+        this.id_produit = id_produit;
     }
 
     public String getNom() {
@@ -23,14 +34,6 @@ public class Produit {
 
     public void setNom(String nom) {
         this.nom = nom;
-    }
-
-    public Long getIdProduit() {
-        return idProduit;
-    }
-
-    public void setIdProduit(Long idProduit) {
-        this.idProduit = idProduit;
     }
 
     public String getDescription() {
