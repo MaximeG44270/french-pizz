@@ -4,6 +4,10 @@ public class TypeProduit {
     private Long idTypeProduit;
     private String libelle;
 
+    public TypeProduit() {
+        super();
+    }
+
     public TypeProduit(Long idTypeProduit, String libelle) {
         this.idTypeProduit = idTypeProduit;
         this.libelle = libelle;
