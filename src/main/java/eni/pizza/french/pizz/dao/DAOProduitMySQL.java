@@ -1,6 +1,7 @@
 package eni.pizza.french.pizz.dao;
 
 import eni.pizza.french.pizz.bo.Produit;
+import eni.pizza.french.pizz.bo.TypeProduit;
 import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -37,6 +38,9 @@ public class DAOProduitMySQL implements IDAOProduit {
             produit.setDescription(rs.getString("description"));
             produit.setPrix(rs.getDouble("prix"));
             produit.setImage_url(rs.getString("image_url"));
+            TypeProduit typeProduit = new TypeProduit();
+            typeProduit.setIdTypeProduit(rs.getLong("TYPE_PRODUIT_id_type_produit"));
+            produit.setTypeProduit(typeProduit);
 
             return produit;
         }
@@ -87,15 +91,16 @@ public class DAOProduitMySQL implements IDAOProduit {
         mapSqlParameterSource.addValue("new_description", produit.getDescription());
         mapSqlParameterSource.addValue("new_prix", produit.getPrix());
         mapSqlParameterSource.addValue("new_image_url", produit.getImage_url());
+        mapSqlParameterSource.addValue("new_id_type_produit", produit.getTypeProduit().getIdTypeProduit());
 
         if(selectProduitById(produit.getId_produit()) != null){
-            sql= "UPDATE produit SET nom = :new_nom, description = :new_description, prix = :new_prix, image_url = :new_image_url WHERE id_produit = :new_id_produit";
+            sql= "UPDATE produit SET nom = :new_nom, description = :new_description, prix = :new_prix, image_url = :new_image_url, id_type_produit = new_id_type_produit:  WHERE id_produit = :new_id_produit";
         } else {
-            sql = "INSERT INTO produit (title, note, year, duration, synopsis, id_genre) VALUES (:myTitle, :myNote, :myYear, :myDuration, :mySynopsis, :myGenreId)";
+            sql = "INSERT INTO produit (id_produit, nom, description, prix, image_url, TYPE_PRODUIT_id_type_produit) VALUES (:new_id_produit, :new_nom, :new_description, :new_prix, :new_image_url, :new_id_type_produit)";
         }
 
         namedParameterJdbcTemplate.update(sql, mapSqlParameterSource);
-        System.out.println("Film inséré en table pizza de BDD db_pizza : " +produit);
+        System.out.println("Produit inséré en table pizza de BDD db_pizza : " +produit);
 
     }
 

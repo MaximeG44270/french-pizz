@@ -8,6 +8,11 @@ public class TypeProduit {
         super();
     }
 
+    public TypeProduit(Long idTypeProduit) {
+        this.idTypeProduit = idTypeProduit;
+    }
+
+
     public TypeProduit(Long idTypeProduit, String libelle) {
         this.idTypeProduit = idTypeProduit;
         this.libelle = libelle;

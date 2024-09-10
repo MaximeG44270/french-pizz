@@ -1,7 +1,9 @@
 package eni.pizza.french.pizz.ihm;
 
 import eni.pizza.french.pizz.bll.ProduitManager;
+import eni.pizza.french.pizz.bll.TypeProduitManager;
 import eni.pizza.french.pizz.bo.Produit;
+import eni.pizza.french.pizz.bo.TypeProduit;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,9 +15,11 @@ import java.util.List;
 @Controller
 public class ProduitController {
     private final ProduitManager produitManager;
+    private final TypeProduitManager typeProduitManager;
 
-    public ProduitController(ProduitManager produitManager) {
+    public ProduitController(ProduitManager produitManager, TypeProduitManager typeProduitManager) {
         this.produitManager = produitManager;
+        this.typeProduitManager = typeProduitManager;
     }
 
     @GetMapping({"add-produit/{id}", "add-produit"})
@@ -24,10 +28,12 @@ public class ProduitController {
         //Préparer ce que tu vas envoyer dans le formulaire par défaut
         Produit produit = new Produit();
 
-        if(id != 0){
+        if(id != null){
             produit = produitManager.selectProduitById(id);
         }
         model.addAttribute("produit", produit);
+        List<TypeProduit> typeProduits = typeProduitManager.getTypeProduits();
+        model.addAttribute("types", typeProduits);
         //Afficher la page formulaire
         return "/add-produit-page";
     }
@@ -39,7 +45,7 @@ public class ProduitController {
      * */
     //Postmapping obligatoire
     @PostMapping("add-produit")
-    public String processAddMovie(@Valid @ModelAttribute(name="movie")Produit produit, BindingResult bindingResult, Model model, RedirectAttributes redirectAttributes) {
+    public String processAddProduit(@Valid @ModelAttribute(name="produit") Produit produit, BindingResult bindingResult, Model model, RedirectAttributes redirectAttributes) {
 
         System.out.println("Produit reçu dans le Formulaire Front = " + produit);
 
@@ -50,6 +56,7 @@ public class ProduitController {
             //Car redirection avec redirect signifie nouvelle url et donc nouvelle requête et donc perte des erreurs stockées
             return "/add-produit-page";
         }
+
 
         //On sauvegarde le movie dans la BDD db_movie en faisant appel à la couche BLL via MovieManager
         produitManager.saveProduit(produit);

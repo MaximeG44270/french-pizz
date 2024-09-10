@@ -6,16 +6,18 @@ public class Produit {
     private String description;
     private double prix;
     private String image_url;
+    private TypeProduit typeProduit;
     public Produit() {
         super();
     }
 
-    public Produit(Long id_produit, String nom, String description, double prix, String image_url) {
+    public Produit(Long id_produit, String nom, String description, double prix, String image_url, TypeProduit typeProduit) {
         this.id_produit = id_produit;
         this.nom = nom;
         this.description = description;
         this.prix = prix;
         this.image_url = image_url;
+        this.typeProduit = typeProduit;
     }
 
     public Long getId_produit() {
@@ -57,4 +59,13 @@ public class Produit {
     public void setImage_url(String image_url) {
         this.image_url = image_url;
     }
+
+    public TypeProduit getTypeProduit() {
+        return typeProduit;
+    }
+    public void setTypeProduit(TypeProduit typeProduit) {
+        this.typeProduit = typeProduit;
+    }
+
+
 }
