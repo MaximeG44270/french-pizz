@@ -20,6 +20,22 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	//dépendance thymeleaf
+	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+
+	// dépendance Spring Validation
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	// Pour que Java puisse se connecter à la BDD > Driver de MySQL
+	runtimeOnly 'mysql:mysql-connector-java:8.0.33'
+
+	// dépendance JDBC pour permettre de faire des requêtes à la BDD à la main via Java
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+
+	// 3 dépendances servant à Spring Security
+
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }

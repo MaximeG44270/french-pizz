@@ -8,10 +8,10 @@ public class Commande {
     private Long idCommande;
     private LocalDate dateHeureLivraison;
     private String Livraison;
-    private MonetaryAmountFormatter prixTotal;
+    private double prixTotal;
     private boolean estPayé;
 
-    public Commande(Long idCommande, LocalDate dateHeureLivraison, String livraison, MonetaryAmountFormatter prixTotal, boolean estPayé) {
+    public Commande(Long idCommande, LocalDate dateHeureLivraison, String livraison, double prixTotal, boolean estPayé) {
         this.idCommande = idCommande;
         this.dateHeureLivraison = dateHeureLivraison;
         Livraison = livraison;
@@ -43,11 +43,11 @@ public class Commande {
         Livraison = livraison;
     }
 
-    public MonetaryAmountFormatter getPrixTotal() {
+    public double getPrixTotal() {
         return prixTotal;
     }
 
-    public void setPrixTotal(MonetaryAmountFormatter prixTotal) {
+    public void setPrixTotal(double prixTotal) {
         this.prixTotal = prixTotal;
     }
 
