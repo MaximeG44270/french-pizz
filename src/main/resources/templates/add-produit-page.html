@@ -31,15 +31,13 @@
                 <div class="uk-form-controls">
                     <select th:field="*{typeProduit}" class="uk-select" aria-label="Select">
                         <option value="" selected>Liste des types de produits</option>
-                        <option th:each="type_produit : ${types}" th:value="${type_produit.getIdTypeProduit()}" th:text="${type_produit.getLibelle()}"></option>
+                        <option th:each="typeProduit : ${types}" th:value="${typeProduit.idTypeProduit}" th:text="${typeProduit.libelle}"></option>
                     </select>
                 </div>
             </div>
 
             <!-- Champ de year-->
             <div class="uk-margin">
-                <!--Normalement le for d'un label est connecté à id d'un input
-                et ici th:field="*{name}" va automatiquement générer un id portant le nom id = name-->
                 <label class="uk-form-label" for="description">Description du produit</label>
                 <div class="uk-form-controls">
                     <input th:field="*{description}" class="uk-input" type="text" placeholder="Description du produit"/>

@@ -13,6 +13,9 @@ public class StringToTypeProduitConverter implements Converter <String, TypeProd
     }
     @Override
     public TypeProduit convert(String TypeProduit) {
-        return typeProduitManager.getTypeById(Long.parseLong(TypeProduit));
+        TypeProduit typeProduit = typeProduitManager.getTypeById(Long.parseLong(TypeProduit));
+
+        return typeProduit;
     }
+
 }
