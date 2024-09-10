@@ -4,7 +4,7 @@ body,html {
     width: 100%;
 }
 header {
-    background-image: url("../image/pizza-background.jpg");
+    background-image: url("../image/pizza-background.png");
     background-size: cover;
     width: 100%;
     background-repeat: no-repeat;
