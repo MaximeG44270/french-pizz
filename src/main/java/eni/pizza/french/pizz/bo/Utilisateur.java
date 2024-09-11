@@ -16,6 +16,10 @@ public class Utilisateur {
         this.password = password;
         this.commande = commande;
     }
+    public Utilisateur ()
+    {
+        super();
+    }
 
     public Long getIdUtilisateur() {
         return idUtilisateur;
