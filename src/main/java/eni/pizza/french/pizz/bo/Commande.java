@@ -22,6 +22,10 @@ public class Commande {
         this.prixTotal = prixTotal;
         this.estPayé = estPayé;
     }
+    public Commande ()
+    {
+        super();
+    }
 
     public Long getIdCommande() {
         return idCommande;
