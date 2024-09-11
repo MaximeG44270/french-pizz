@@ -66,4 +66,11 @@ public class ProduitController {
         //Afficher la page Accueil
         return "redirect:/";
     }
+    @GetMapping("delete-produit/{id}")
+    public String deleteProduit(@PathVariable Long id, Model model, RedirectAttributes redirectAttributes) {
+        Produit produit = produitManager.selectProduitById(id);
+        produitManager.deleteProduitById(id);
+        model.addAttribute("produit", produit);
+        return "delete-produit-page";
+    }
 }

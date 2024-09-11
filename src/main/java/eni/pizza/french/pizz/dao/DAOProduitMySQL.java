@@ -105,8 +105,7 @@ public class DAOProduitMySQL implements IDAOProduit {
     @Override
     public void deleteProduitById(Long id)
     {
-        String sql = "DELETE PRODUIT FROM produit WHERE id_produit = :id_produit";
-        List<Produit> produits = jdbcTemplate.query("DELETE * FROM produit WHERE id_produit = ?", PRODUIT_ROW_MAPPER, id);
+        int nbSuppression = jdbcTemplate.update("DELETE produit FROM produit WHERE id_produit = ?", id);
         System.out.println("Produit supprimé");
     }
 
