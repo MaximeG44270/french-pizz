@@ -232,7 +232,7 @@ h2 {
     height: 100%;
 }
 
-/*--------------------------  CAROUSEL  ------------------------------------------------------------------------*/
+/*--------------------------  CONTAINER 2  ------------------------------------------------------------------------*/
 .container-2 {
     width: 100%;
     display: flex;
@@ -287,4 +287,124 @@ h2 {
     font-style: italic;
     color: white;
     text-align: center;
+}
+
+/*--------------------------  CONTAINER 3  ------------------------------------------------------------------------*/
+.container-3 {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.container-3-block {
+    display: flex;
+    flex-direction: row;
+}
+
+.container-3-colonne-gauche {
+    display: flex;
+    flex-direction: column;
+    margin-left: 6vw;
+}
+
+.container-3-colonne-millieu {
+    margin-left: 6vw;
+}
+
+.container-3-block1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-3-block-1-titre {
+    font-family: poppins, sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    font-style: italic;
+    color: #e1000f;
+    margin: 0;
+}
+
+.container-3-block-1-adresse {
+    font-family: poppins, sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: black;
+    margin: 0;
+}
+
+.container-3-block-1-ville {
+    font-family: poppins, sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: black;
+    margin: 0;
+}
+
+.container-3-block-1-tel {
+    font-family: poppins, sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: black;
+    margin: 0;
+}
+
+.container-3-block-2 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vh;
+}
+
+.container-3-block-2-titre {
+    font-family: poppins, sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: black;
+}
+
+.container-3-block-2-text {
+    font-family: poppins, sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: black;
+}
+
+.container-3-block-3 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vh;
+}
+
+.container-3-block-3-titre {
+    font-family: poppins, sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: black;
+}
+
+.container-3-block-3-text {
+    font-family: poppins, sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: black;
+}
+
+.text-button-contact {
+    font-family: poppins, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 900;
+    font-style: italic;
+    color: white;
+}
+
+.lien-mail {
+    text-decoration: none;
+}
+
+.margin-button {
+    margin-top: 10vh;
 }
