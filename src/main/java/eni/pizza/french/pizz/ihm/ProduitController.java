@@ -64,7 +64,7 @@ public class ProduitController {
         //Ajouter un message temporaire (flash card) dans la section "flashMessage"
         /*EniIHMHelpers.sendCommonFlashMessage(redirectAttributes, EniFlashMessage.TYPE_FLASH_SUCCESS, "Vous vous êtes connecté-e avec succès.");*/
         //Afficher la page Accueil
-        return "redirect:/";
+        return "redirect:/add-produit-page";
     }
     @GetMapping("delete-produit/{id}")
     public String deleteProduit(@PathVariable Long id, Model model, RedirectAttributes redirectAttributes) {
