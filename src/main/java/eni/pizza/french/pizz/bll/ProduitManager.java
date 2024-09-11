@@ -33,4 +33,7 @@ public class ProduitManager {
     public void saveProduit(Produit produit){
         daoProduit.saveProduit(produit);
     }
+    public void deleteProduitById(Long id){
+        daoProduit.deleteProduitById(id);
+    }
 }

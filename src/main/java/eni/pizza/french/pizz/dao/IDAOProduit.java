@@ -11,4 +11,6 @@ public interface IDAOProduit {
     Produit selectProduitById(Long id);
 
     void saveProduit(Produit produit);
+
+    void deleteProduitById(Long id);
 }

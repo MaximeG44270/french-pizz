@@ -2,7 +2,6 @@ package eni.pizza.french.pizz.dao;
 
 import eni.pizza.french.pizz.bo.Produit;
 import eni.pizza.french.pizz.bo.TypeProduit;
-import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -27,7 +26,7 @@ public class DAOProduitMySQL implements IDAOProduit {
      * autrement dit comment récupérer un movie de la table movie de notre BDD MySql db_movie
      * et l'injecter sous forme d'instance de class Movie sous java
      */
-    static final RowMapper<Produit> MOVIE_ROW_MAPPER = new RowMapper<Produit>() {
+    static final RowMapper<Produit> PRODUIT_ROW_MAPPER = new RowMapper<Produit>() {
         //Chaque ligne de la table movie de la BDD db_movie va correspondre à un ResultSet rs
         @Override
         public Produit mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -50,13 +49,13 @@ public class DAOProduitMySQL implements IDAOProduit {
     @Override
     public List<Produit> findAllProduit() {
         // on requête la base SQL via JdbcTemplate avec une extraction de tous les movies
-        return jdbcTemplate.query("SELECT * FROM produit", MOVIE_ROW_MAPPER);
+        return jdbcTemplate.query("SELECT * FROM produit", PRODUIT_ROW_MAPPER);
     }
 
     @Override
     public Produit selectProduitById(Long id) {
         // on requête la base SQL via JdbcTemplate avec une sélection de tous les movies avec comme condition id = myId
-        List<Produit> produits = jdbcTemplate.query("SELECT * FROM produit WHERE id_produit = ?", MOVIE_ROW_MAPPER, id);
+        List<Produit> produits = jdbcTemplate.query("SELECT * FROM produit WHERE id_produit = ?", PRODUIT_ROW_MAPPER, id);
 
         //si on ne trouve aucun movie avec cet id alors on retourne null
         if (produits.size() == 0) {
@@ -102,6 +101,13 @@ public class DAOProduitMySQL implements IDAOProduit {
         namedParameterJdbcTemplate.update(sql, mapSqlParameterSource);
         System.out.println("Produit inséré en table pizza de BDD db_pizza : " +produit);
 
+    }
+    @Override
+    public void deleteProduitById(Long id)
+    {
+        String sql = "DELETE PRODUIT FROM produit WHERE id_produit = :id_produit";
+        List<Produit> produits = jdbcTemplate.query("DELETE * FROM produit WHERE id_produit = ?", PRODUIT_ROW_MAPPER, id);
+        System.out.println("Produit supprimé");
     }
 
 }

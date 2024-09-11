@@ -6,16 +6,16 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
 @Component
-public class StringToTypeProduitConverter implements Converter <String, TypeProduit> {
+public class StringToTypeProduitConverter implements Converter<String, TypeProduit> {
     private ITypeProduitManager typeProduitManager;
     public StringToTypeProduitConverter(ITypeProduitManager typeProduitManager) {
         this.typeProduitManager = typeProduitManager;
     }
     @Override
-    public TypeProduit convert(String TypeProduit) {
-        TypeProduit typeProduit = typeProduitManager.getTypeById(Long.parseLong(TypeProduit));
+    public TypeProduit convert(String typeProduit) {
+        TypeProduit letypeProduit = typeProduitManager.getTypeById(Long.parseLong(typeProduit));
 
-        return typeProduit;
+        return letypeProduit;
     }
 
 }

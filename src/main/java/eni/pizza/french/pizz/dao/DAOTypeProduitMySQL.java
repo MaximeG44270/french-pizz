@@ -25,7 +25,7 @@ public class DAOTypeProduitMySQL implements IDAOTypeProduit {
 
     @Override
     public TypeProduit findTypeById(Long id) {
-        String sql = "SELECT * FROM type_produit WHERE id = :new_id";
+        String sql = "SELECT id_type_produit AS idTypeProduit, libelle FROM type_produit WHERE id_type_produit = :new_id";
 
         // Cette map va faire le lien entre toutes les clés et leurs valeurs correspondant aux noms des colonnes de la table genre dans la BDD db_pizza
         MapSqlParameterSource map = new MapSqlParameterSource();
