@@ -6,13 +6,15 @@ public class Utilisateur {
     private String prenom;
     private String email;
     private String password;
+    private Commande commande;
 
-    public Utilisateur(Long idUtilisateur, String nom, String prenom, String email, String password) {
+    public Utilisateur(Long idUtilisateur, String nom, String prenom, String email, String password, Commande commande) {
         this.idUtilisateur = idUtilisateur;
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
         this.password = password;
+        this.commande = commande;
     }
 
     public Long getIdUtilisateur() {
@@ -53,5 +55,13 @@ public class Utilisateur {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Commande getCommande() {
+        return commande;
+    }
+
+    public void setCommande(Commande commande) {
+        this.commande = commande;
     }
 }
