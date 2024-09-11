@@ -4,6 +4,7 @@ body,html {
     padding: 0;
     width: 100%;
     cursor: default;
+    background-color: black;
 }
 header {
     background-image: url("../image/pizza-background.png");
@@ -45,6 +46,11 @@ li {
     color: white;
     margin-left: 5vw;
     list-style-type: none;
+}
+
+.li-modif {
+    text-decoration: none;
+    color: inherit;
 }
 
 li:hover {

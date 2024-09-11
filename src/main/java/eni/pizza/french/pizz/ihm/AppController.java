@@ -7,8 +7,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class AppController {
 
     //test
-    @GetMapping("")
+    @GetMapping("home")
     public String homePage() {
         return "home";
+    }
+
+    @GetMapping("menu")
+    public String menuPage() {
+        return "menu";
     }
 }

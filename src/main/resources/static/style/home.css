@@ -50,6 +50,11 @@ li:hover {
     color: #e1000f;
 }
 
+.li-modif {
+    text-decoration: none;
+    color: inherit;
+}
+
 .number-phone {
     display: flex;
     margin-top: 3vh;
