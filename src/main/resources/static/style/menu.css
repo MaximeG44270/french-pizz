@@ -4,6 +4,7 @@
     background-color: white;
     align-items: center;
     justify-content: center;
+    background-image: url("../image/fond-grand.png");
 }
 
 .picture-french-pizz {
@@ -16,6 +17,7 @@
     display: flex;
     flex-direction: row;
     background-color: white;
+    background-image: url("../image/fond-grand.png");
 }
 
 .pizza-container {
@@ -82,13 +84,13 @@
 }
 
 .rond-price-presentation {
-    width: 9vw;
+    width: 6vw;
     height: 9vh;
     background-color: #e1000f;
     border-radius: 50px;
     display: flex;
     align-items: center;
-    margin-left: 20vw;
+    margin-left: 22vw;
     justify-content: center;
 }
 
@@ -97,7 +99,6 @@
     font-size: 1.5rem;
     font-weight: 600;
     color: white;
-    margin-left: 1vw;
 }
 
 .button {
