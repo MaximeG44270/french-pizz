@@ -1,67 +1,56 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{/base}">
+<div layout:fragment="css-title">
+  <title>Inscription - French PIZZ</title>
+  <link rel="stylesheet" href="/style/inscription.css">
+</div>
 <body>
+<div layout:fragment="content">
 <main>
-  <div class="uk-container">
-
-    <h1 class="uk-heading-divider uk-text-center">Formulaire d'ajout de membre à la database</h1>
-
-    <form th:object="${utilisateur}" class="uk-form-horizontal uk-margin-large" method="POST" th:action="@{/add-user}">
-
+  <div class="container-connection">
+    <div class="title-connection-form">
+      <img src="/image/french-pizz.png" class="img-french-pizz" alt="french-pizz">
+      <img src="/image/inscription.png" class="img-inscription" alt="inscription">
+    </div>
+    <form th:object="${utilisateur}" class="container-form" method="POST" th:action="@{/add-user}">
       <input th:field="*{idUtilisateur}" type="hidden">
-
-
-      <!-- Champ de firstName-->
-      <div class="uk-margin">
-        <!--Normalement le for d'un label est connecté à id d'un input
-        et ici th:field="*{name}" va automatiquement générer un id portant le nom id = name-->
-        <label class="uk-form-label eni-label" for="prenom">Votre prénom :</label>
-        <div class="uk-form-controls">
-          <input th:field="*{prenom}" class="uk-input" type="text" placeholder="Prénom"/>
+      <!----------------------------------------   FIRST NAME     ---------------------------------------------------------------->
+      <div class="container-first-name">
+        <label class="label-text-first-name" for="prenom">Votre prénom :</label>
+        <div class="container-input-first-name">
+          <input th:field="*{prenom}" class="" type="text" placeholder="Prénom"/>
         </div>
       </div>
-
-      <!-- Champ de lastName-->
-      <div class="uk-margin">
-        <!--Normalement le for d'un label est connecté à id d'un input
-        et ici th:field="*{name}" va automatiquement générer un id portant le nom id = name-->
-        <label class="uk-form-label eni-label" for="nom">Votre nom :</label>
-        <div class="uk-form-controls">
-          <input th:field="*{nom}" class="uk-input" type="text" placeholder="Nom de famille"/>
+      <!----------------------------------------   LAST NAME     ---------------------------------------------------------------->
+      <div class="container-last-name">
+        <label class="label-text-last-name" for="nom">Votre nom :</label>
+        <div class="container-input-last-name">
+          <input th:field="*{nom}" class="input-last-name" type="text" placeholder="Nom de famille"/>
         </div>
       </div>
-
-      <!-- Champ de email-->
-      <div class="uk-margin">
-        <!--Normalement le for d'un label est connecté à id d'un input
-        et ici th:field="*{name}" va automatiquement générer un id portant le nom id = name-->
-        <label class="uk-form-label eni-label" for="email">Votre email</label>
-        <div class="uk-form-controls">
-          <input th:field="*{email}" class="uk-input" type="email" placeholder="Email"/>
+      <!----------------------------------------   EMAIL     ---------------------------------------------------------------->
+      <div class="container-label-email">
+        <label class="label-text-last-email" for="email">Votre email</label>
+        <div class="container-input-email">
+          <input th:field="*{email}" class="input-email" type="email" placeholder="Email"/>
         </div>
       </div>
-
-      <!-- Champ de password-->
-      <div class="uk-margin">
-        <!--Normalement le for d'un label est connecté à id d'un input
-        et ici th:field="*{name}" va automatiquement générer un id portant le nom id = name-->
-        <label class="uk-form-label eni-label" for="password">Votre mot de passe</label>
-        <div class="uk-form-controls">
-          <input th:field="*{password}" class="uk-input" type="password" placeholder="Mot de passe"/>
+      <!----------------------------------------   PASSWORD     ---------------------------------------------------------------->
+      <div class="container-label-password">
+        <label class="label-text-last-password" for="password">Votre mot de passe</label>
+        <div class="container-input-password">
+          <input th:field="*{password}" class="input-password" type="password" placeholder="Mot de passe"/>
         </div>
       </div>
-
-      <div class="uk-margin">
-        <input value="S'inscrire" type="submit" class="uk-button uk-button-primary uk-width-1-1"/>
+      <!----------------------------------------   BUTTON SIGN IN     ---------------------------------------------------------------->
+      <div class="block-sign-in">
+        <input value="S'inscrire" type="submit" class="button-sign-in"/>
       </div>
     </form>
   </div>
 </main>
-
+</div>
 </body>
 </html>

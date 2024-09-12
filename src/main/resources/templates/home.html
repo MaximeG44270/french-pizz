@@ -19,7 +19,7 @@
                 <ul>
                     <li><a href="home" class="li-modif">Accueil</a></li>
                     <li>Nos PIZZAS</li>
-                    <li><a href="menu" class="li-modif">Menu</a></li>
+                    <li><a href="menu" class="li-modif">Commander</a></li>
                     <li>Contact</li>
                 </ul>
             </nav>
@@ -28,10 +28,17 @@
                 <p class="number-header">02 51 48 24 94</p>
             </div>
             <div class="connection">
-                <div class="button-connexion">
-                    <p class="header-text-connexion">Connexion</p>
-                </div>
+                <a sec:authorize="!isAuthenticated()" href="/login">
+                    <img src="/image/login.png" class="icone-login" alt="connection">
+                </a>
+                <a sec:authorize="isAuthenticated()" href="/logout">
+                    <img src="/image/logout.png" class="icone-logout" alt="déconnection">
+                </a>
             </div>
+<!--            <div class="connection">-->
+<!--                <img class="tel-header-2" src="/image/tel-header.png">-->
+<!--                <img class="tel-header-3" src="/image/tel-header.png">-->
+<!--            </div>-->
         </div>
         <div class="container-header">
             <div class="colonne-gauche">
@@ -49,8 +56,9 @@
                     FAITES-VOUS LIVRER VOS PLATS PRÉFÉRÉS LIVRÉS DIRECTEMENT À VOTRE PORTE.</div>
                 <div class="header-container-button">
                     <div class="button">
-                        <!--  Mettre ici lien  -->
-                        <p class="text-button-commande">Commander !</p>
+                        <a href="menu" class="link-header">
+                            <p class="text-button-commande">Commander !</p>
+                        </a>
                     </div>
                     <div class="header-text-link">
                         <div class="text-nous-suivre">
@@ -154,6 +162,7 @@
                 <p class="footer-block-4-cgv">CGV</p>
                 <p class="footer-block-4-allergene">ALLERGENE</p>
                 <p class="footer-block-4-nous-rejoindre">NOUS REJOINDRE</p>
+                <p class="footer-block-4-link"><a href="link">LINK</a></p>
             </div>
             <div class="footer-block-5">
                 <div class="logo-footer">

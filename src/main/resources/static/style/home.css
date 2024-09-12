@@ -72,7 +72,6 @@ li:hover {
     font-size: 1.5rem;
     font-weight: 600;
     color: white;
-    margin-left: 1vw;
 }
 
 .header-text-connexion {
@@ -89,13 +88,21 @@ li:hover {
 .tel-header {
     width: 2vw;
     height: 4vh;
-    margin-left: 14vw;
+    margin-left: 10vw;
 }
 
 .container-header {
     display: flex;
     flex-direction: row;
     margin-left: 5.5vw;
+}
+
+.icone-login {
+    width: 3vw;
+}
+
+.icone-logout {
+    width: 3vw;
 }
 
 .colonne-middle {
@@ -163,6 +170,10 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.link-header {
+    text-decoration: none;
 }
 
 .text-button-commande {
@@ -303,6 +314,7 @@ h2 {
     justify-content: center;
     width: 100%;
     height: 100vh;
+    background-image: url("../image/fond-grand.png");
 }
 
 .container-3-block {
@@ -419,7 +431,7 @@ h2 {
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 75vh;
+    height: 63vh;
     background-color: black;
 }
 
@@ -645,6 +657,15 @@ h2 {
 }
 
 .footer-block-4-nous-rejoindre {
+    font-family: poppins, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    font-style: italic;
+    color: white;
+    margin-bottom: 0;
+}
+
+.footer-block-4-link {
     font-family: poppins, sans-serif;
     font-size: 1rem;
     font-weight: 500;
