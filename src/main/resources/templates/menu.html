@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
       layout:decorate="~{/base}">
-<body>
 <div layout:fragment="css-title">
   <title>Menu - French PIZZ</title>
   <link rel="stylesheet" href="style/menu.css">
 </div>
-
+<body>
+<div layout:fragment="content">
+  <div class="container-notre-carte">
+    <img src="/image/french-pizz.png" class="picture-french-pizz">
+  </div>
+  <div class="container-pizza-list">
+    <div class="pizza-container">
+      <div class="content" th:each="produit: ${produits}">
+        <div class="fond-presentation">
+          <div class="rond-presentation">
+            <img th:src="@{${produit.image_url}}" class="picture-size" alt="pizza Image"/>
+          </div>
+          <div class="rond-price-presentation">
+            <p th:text="${produit.prix} + ' euros'" class="text-price"></p>
+          </div>
+          <p class="pizza-presentation">Pizza</p>
+          <p th:text="${produit.nom}" class="text-title-pizza"></p>
+          <div class="button">
+            <button type="submit" value="Envoyer" id="commander">Commander</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
