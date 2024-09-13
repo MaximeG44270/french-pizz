@@ -21,8 +21,8 @@ public class SecurityConfig {
     @Bean
     public UserDetailsManager userDetailsManager(DataSource dataSource) {
         JdbcUserDetailsManager userDetailsManager = new JdbcUserDetailsManager(dataSource);
-        userDetailsManager.setUsersByUsernameQuery("SELECT email, password, 1 FROM utilisateur WHERE email=?");
-        userDetailsManager.setAuthoritiesByUsernameQuery("SELECT utilisateur.email, roles.ROLE FROM utilisateur INNER JOIN roles ON member.isAdmin = roles.IS_ADMIN WHERE email=?");
+        userDetailsManager.setUsersByUsernameQuery("SELECT email, mot_de_passe, 1 FROM utilisateur WHERE email=?");
+        userDetailsManager.setAuthoritiesByUsernameQuery("SELECT utilisateur.email, roles.libelle,  FROM utilisateur INNER JOIN roles ON role_utilisateur.ROLE_id_role=4 WHERE email=?");
 
         return userDetailsManager;
     }
@@ -34,20 +34,10 @@ public class SecurityConfig {
                 .authorizeHttpRequests((authorize) -> authorize
                                 //hasAuthority() permet de gérer un seul et unique ROLE de l'user connecté
                                 // ** sert à remplacer {id} de l'url add-movie/{id}
-                                .requestMatchers(HttpMethod.GET,"/add-movie/**").hasAuthority("ROLE_ADMIN")
-                                .requestMatchers(HttpMethod.POST,"/add-movie/**").hasAuthority("ROLE_ADMIN")
-                                .requestMatchers(HttpMethod.GET, "/add-movie").hasAuthority("ROLE_ADMIN")
-                                .requestMatchers(HttpMethod.POST, "/add-movie").hasAuthority("ROLE_ADMIN")
-                                .requestMatchers(HttpMethod.GET,"/add-member/**").hasAuthority("ROLE_ADMIN")
-                                .requestMatchers(HttpMethod.POST,"/add-member/**").hasAuthority("ROLE_ADMIN")
-                                .requestMatchers(HttpMethod.GET, "/add-member").hasAuthority("ROLE_ADMIN")
-                                .requestMatchers(HttpMethod.POST, "/add-member").hasAuthority("ROLE_ADMIN")
-                                .requestMatchers(HttpMethod.GET, "/add-participant").hasAuthority("ROLE_ADMIN")
-                                .requestMatchers(HttpMethod.POST, "/add-participant").hasAuthority("ROLE_ADMIN")
-                                .requestMatchers(HttpMethod.GET, "/add-participant/**").hasAuthority("ROLE_ADMIN")
-                                .requestMatchers(HttpMethod.POST, "/add-participant/**").hasAuthority("ROLE_ADMIN")
-                                .requestMatchers("/change-lang/**").permitAll()
-                                .requestMatchers("/list-movies").hasAnyAuthority("ROLE_ADMIN", "ROLE_MEMBRE")
+                                .requestMatchers(HttpMethod.GET,"/add-produit/**").hasAuthority("ROLE_ADMIN")
+                                .requestMatchers(HttpMethod.POST,"/add-produit/**").hasAuthority("ROLE_ADMIN")
+                                .requestMatchers("add-produit/**").permitAll()
+                                .requestMatchers("/add-user/**").permitAll()
                                 .requestMatchers("/movie-details/**").hasAnyAuthority("ROLE_ADMIN", "ROLE_MEMBRE")
                                 .requestMatchers("/").permitAll()
                                 .requestMatchers("/login").permitAll()
@@ -57,7 +47,7 @@ public class SecurityConfig {
                                 //ainsi SpringSecurity ne bloque plus le chargement d éléments stockés dans vendor
                                 .requestMatchers("/vendor/**").permitAll()
                                 .requestMatchers("/style/**").permitAll()
-                                .requestMatchers("/img/**").permitAll()
+                                .requestMatchers("/image/**").permitAll()
                                 //Pour toutes les autres requêtes qui ne sont pas explicitement déclarées ci-dessus,
                                 //  alors on peut soit tout autoriser après authentification via .anyRequest().authenticated()
                                 // ou alors plutôt les rejettées par défaut via:
@@ -71,9 +61,8 @@ public class SecurityConfig {
         //Permet de configurer la page avec l'url "/login" pour qu'elle renvoie sur la page login fournie par défaut par Spring Security
         //et non notre page "/V2/login-page-v2.html"
         //http.formLogin(Customizer.withDefaults());
-
         //ATTENTION: quand on customize une COnnexion personnalisée, la page de DECOnnexion par défaut devra également etre obligatoirement personalisée
-        //Permet ici de conserver en url "/login" le getMapping personnalisé présent dans DemoController renvoyant vers "/V2/login-page-v2.html"
+        //Permet ici de conserver en url "/login" le getMapping personnalisé présent dans DemoController renvoyant vers "/login-page.html"
         http.formLogin(form -> form.loginPage("/login")
                 // permet le retour vers la page url  "" en cas de succès de connexion
                 .defaultSuccessUrl("/user-connected"));
