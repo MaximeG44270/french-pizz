@@ -1,6 +1,7 @@
 package eni.pizza.french.pizz.ihm;
 
 import eni.pizza.french.pizz.bll.IAuthentificationManager;
+import eni.pizza.french.pizz.bo.Commande;
 import eni.pizza.french.pizz.bo.Utilisateur;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,6 +66,7 @@ public class UtilisateurController {
             System.out.println("Erreur de contrôle surface");
             return "add-users";
         }
+
         authentificationManager.saveUtilisateur(utilisateur);
         return "redirect:/home";
 

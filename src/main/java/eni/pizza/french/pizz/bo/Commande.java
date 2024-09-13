@@ -1,6 +1,7 @@
 package eni.pizza.french.pizz.bo;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Commande {
     private Long idCommande;
@@ -11,6 +12,7 @@ public class Commande {
     private Utilisateur utilisateur;
     private double prixTotal;
     private boolean estPayé;
+    private List<DetailCommande> lignes;
 
     public Commande(Long idCommande, LocalDate dateHeureLivraison, Client client, String livraison, EtatCommande etatCommande, Utilisateur utilisateur, double prixTotal, boolean estPayé) {
         this.idCommande = idCommande;

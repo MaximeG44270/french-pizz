@@ -58,16 +58,26 @@ public class DAOAuthentificationMySQL implements IDAOAuthentification{
     }
     @Override
     public void saveUtilisateur(Utilisateur utilisateur) {
+<<<<<<< Updated upstream
         if (utilisateur.getIdUtilisateur() != null) {
+=======
+        if ((utilisateur.getIdUtilisateur()) != null) {
+>>>>>>> Stashed changes
             jdbcTemplate.update("UPDATE UTILISATEUR SET nom = ?, prenom = ?, email = ?, mot_de_passe = ? WHERE id_utilisateur = ?",
                     utilisateur.getNom(),
                     utilisateur.getPrenom(),
                     utilisateur.getEmail(),
                     utilisateur.getPassword());
+<<<<<<< Updated upstream
 
             return;
         }
         jdbcTemplate.update("INSERT INTO UTILISATEUR (nom, prenom, email, mot_de_passe) VALUES (?, ?, ?, ?)",
+=======
+            return;
+        }
+        jdbcTemplate.update("INSERT INTO UTILISATEUR (nom, prenom, email, mot_de_passe) VALUES ( ?, ?, ?, ?)",
+>>>>>>> Stashed changes
                 utilisateur.getNom(),
                 utilisateur.getPrenom(),
                 utilisateur.getEmail(),

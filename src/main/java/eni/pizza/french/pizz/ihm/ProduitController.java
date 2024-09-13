@@ -58,7 +58,7 @@ public class ProduitController {
         }
 
 
-        //On sauvegarde le movie dans la BDD db_movie en faisant appel à la couche BLL via MovieManager
+        //On sauvegarde le produit dans la BDD db_movie en faisant appel à la couche BLL via MovieManager
         produitManager.saveProduit(produit);
 
         //Ajouter un message temporaire (flash card) dans la section "flashMessage"

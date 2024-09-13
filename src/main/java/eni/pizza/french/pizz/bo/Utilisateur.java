@@ -59,5 +59,8 @@ public class Utilisateur {
         this.password = password;
     }
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 }

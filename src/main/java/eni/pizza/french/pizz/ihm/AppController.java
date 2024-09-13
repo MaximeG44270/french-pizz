@@ -21,7 +21,11 @@ public class AppController {
     }
 
     //test
+<<<<<<< Updated upstream
     @GetMapping({"home","/",""})
+=======
+    @GetMapping(path = {"","/","home"})
+>>>>>>> Stashed changes
     public String homePage() {
         return "home";
     }
