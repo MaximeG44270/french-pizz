@@ -4,18 +4,18 @@
       layout:decorate="~{/base}">
 <div layout:fragment="css-title">
     <title>Menu - French PIZZ</title>
-    <link rel="stylesheet" href="style/menu.css">
+    <link rel="stylesheet" href="style/add-produit.css">
 </div>
 <body>
 <div layout:fragment="content">
         <div class="container-add-produit">
-            <div class="title-connection-form">
+            <div class="title-add-produit-form">
                 <img src="/image/french-pizz.png" class="img-french-pizz" alt="french-pizz">
-                <img src="/image/inscription.png" class="img-inscription" alt="inscription">
+                <img src="/image/ajouter-un-produit.png" class="img-ajouter-produit" alt="ajouter-produit">
             </div>
             <form th:object="${produit}" class="container-form" method="POST" th:action="@{/add-produit}">
         <!----------------------------------------   NAME     ---------------------------------------------------------------->
-                <div class="Container-name">
+                <div class="container-name">
                     <label class="label-text-name" for="nom">Nom du produit</label>
                     <div class="container-input-name">
                         <input th:field="*{nom}" class="input-name" type="text" placeholder="Nom produit"/>

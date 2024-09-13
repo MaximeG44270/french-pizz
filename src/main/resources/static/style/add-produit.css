@@ -1,13 +1,14 @@
-.container-connection {
+.container-add-produit {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin: 0;
     padding: 0;
     background-image: url("../image/fond-grand.png");
     width: 100%;
 }
 
-.title-connection-form {
+.title-add-produit-form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,24 +19,24 @@
     margin-top: 6vh;
 }
 
-.img-inscription {
+.img-ajouter-produit {
     width: 25vw;
 }
 
 .container-form {
     display: flex;
-    align-items: center;
     flex-direction: column;
-    margin-top: 11vh;
+    align-items: center;
+    margin-top: 10vh;
 }
 
-.container-first-name {
+.container-name {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.label-text-first-name {
+.label-text-name {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,24 +46,25 @@
     color: #e1000f;
 }
 
-.input-first-name {
+.input-name {
     font-family: poppins, sans-serif;
     font-size: 1.5rem;
     text-align: center;
     font-weight: 600;
     border-radius: 10px;
+    color: #7e8075;
     width: 40vw;
     height: 5vh;
 }
 
-.container-last-name {
+.container-itproduit {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 5vh;
 }
 
-.label-text-last-name {
+.label-text-itproduit {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -72,7 +74,7 @@
     color: #e1000f;
 }
 
-.input-last-name {
+.select-itproduit {
     font-family: poppins, sans-serif;
     font-size: 1.5rem;
     text-align: center;
@@ -80,16 +82,21 @@
     border-radius: 10px;
     width: 40vw;
     height: 5vh;
+    color: #7e8075;
 }
 
-.container-email {
+.option-1-itproduit {
+    color: #7e8075;
+}
+
+.container-description-produit {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 5vh;
 }
 
-.label-text-email {
+.label-text-description-produit {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -99,24 +106,25 @@
     color: #e1000f;
 }
 
-.input-email {
+.input-description-produit {
     font-family: poppins, sans-serif;
     font-size: 1.5rem;
     text-align: center;
     font-weight: 600;
     border-radius: 10px;
+    color: #7e8075;
     width: 40vw;
     height: 5vh;
 }
 
-.container-password {
+.container-price {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 5vh;
 }
 
-.label-text-password {
+.label-text-price {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -126,22 +134,51 @@
     color: #e1000f;
 }
 
-.input-password {
+.input-price {
     font-family: poppins, sans-serif;
     font-size: 1.5rem;
     text-align: center;
     font-weight: 600;
     border-radius: 10px;
+    color: #7e8075;
     width: 40vw;
     height: 5vh;
 }
 
-.block-sign-in {
+.container-link-picture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.label-text-link-picture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: poppins, sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #e1000f;
+}
+
+.textarea-link-picture {
+    font-family: poppins, sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 10px;
+    color: #7e8075;
+    width: 40vw;
+    height: 10vh;
+}
+
+.block-button-ajouter {
     display: flex;
     flex-direction: column;
 }
 
-.button-sign-in {
+.button-ajouter {
     margin-top: 10vh;
     margin-bottom: 15vh;
     font-family: poppins, sans-serif;
