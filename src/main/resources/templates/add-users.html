@@ -8,7 +8,6 @@
 </div>
 <body>
 <div layout:fragment="content">
-<main>
   <div class="container-connection">
     <div class="title-connection-form">
       <img src="/image/french-pizz.png" class="img-french-pizz" alt="french-pizz">
@@ -20,7 +19,7 @@
       <div class="container-first-name">
         <label class="label-text-first-name" for="prenom">Votre prénom :</label>
         <div class="container-input-first-name">
-          <input th:field="*{prenom}" class="" type="text" placeholder="Prénom"/>
+          <input th:field="*{prenom}" class="input-first-name" type="text" placeholder="Prénom"/>
         </div>
       </div>
       <!----------------------------------------   LAST NAME     ---------------------------------------------------------------->
@@ -31,15 +30,15 @@
         </div>
       </div>
       <!----------------------------------------   EMAIL     ---------------------------------------------------------------->
-      <div class="container-label-email">
-        <label class="label-text-last-email" for="email">Votre email</label>
+      <div class="container-email">
+        <label class="label-text-email" for="email">Votre email</label>
         <div class="container-input-email">
           <input th:field="*{email}" class="input-email" type="email" placeholder="Email"/>
         </div>
       </div>
       <!----------------------------------------   PASSWORD     ---------------------------------------------------------------->
-      <div class="container-label-password">
-        <label class="label-text-last-password" for="password">Votre mot de passe</label>
+      <div class="container-password">
+        <label class="label-text-password" for="password">Votre mot de passe</label>
         <div class="container-input-password">
           <input th:field="*{password}" class="input-password" type="password" placeholder="Mot de passe"/>
         </div>
@@ -50,7 +49,6 @@
       </div>
     </form>
   </div>
-</main>
 </div>
 </body>
 </html>

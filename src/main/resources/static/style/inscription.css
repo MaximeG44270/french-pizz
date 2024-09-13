@@ -1,12 +1,10 @@
-main {
-    margin: 0;
-    padding: 0;
-    background-image: url("../image/fond-grand.png");
-}
-
 .container-connection {
     display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
+    background-image: url("../image/fond-grand.png");
+    width: 100%;
 }
 
 .title-connection-form {
@@ -29,4 +27,129 @@ main {
     align-items: center;
     flex-direction: column;
     margin-top: 11vh;
+}
+
+.container-first-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.label-text-first-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: poppins, sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #e1000f;
+}
+
+.input-first-name {
+    font-family: poppins, sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 10px;
+    width: 40vw;
+    height: 5vh;
+}
+
+.container-last-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.label-text-last-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: poppins, sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #e1000f;
+}
+
+.input-last-name {
+    font-family: poppins, sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 10px;
+    width: 40vw;
+    height: 5vh;
+}
+
+.container-email {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.label-text-email {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: poppins, sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #e1000f;
+}
+
+.input-email {
+    font-family: poppins, sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 10px;
+    width: 40vw;
+    height: 5vh;
+}
+
+.container-password {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.label-text-password {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: poppins, sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #e1000f;
+}
+
+.input-password {
+    font-family: poppins, sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 10px;
+    width: 40vw;
+    height: 5vh;
+}
+
+.block-sign-in {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-sign-in {
+    margin-top: 10vh;
+    margin-bottom: 15vh;
+    font-family: poppins, sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: black;
+    border-radius: 10px;
+    width: 20vw;
+    height: 10vh;
 }
