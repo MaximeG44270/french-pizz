@@ -14,8 +14,8 @@ public class Utilisateur {
         this.email = email;
         this.password = password;
     }
-    public Utilisateur ()
-    {
+
+    public Utilisateur() {
         super();
     }
 
@@ -59,8 +59,4 @@ public class Utilisateur {
         this.password = password;
     }
 
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 }
