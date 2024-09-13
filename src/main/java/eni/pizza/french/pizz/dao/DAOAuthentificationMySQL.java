@@ -2,6 +2,7 @@ package eni.pizza.french.pizz.dao;
 
 import eni.pizza.french.pizz.bo.Commande;
 import eni.pizza.french.pizz.bo.Utilisateur;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @Repository
 public class DAOAuthentificationMySQL implements IDAOAuthentification{
+    @Autowired
     JdbcTemplate jdbcTemplate;
     static final RowMapper<Utilisateur> UTILISATEUR_ROW_MAPPER = new RowMapper<Utilisateur>() {
         public Utilisateur mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -20,9 +22,6 @@ public class DAOAuthentificationMySQL implements IDAOAuthentification{
             utilisateur.setNom(rs.getString("nom"));
             utilisateur.setPrenom(rs.getString("prenom"));
             utilisateur.setEmail(rs.getString("email"));
-            Commande commande = new Commande();
-            commande.setIdCommande(rs.getLong("COMMANDE_id_commande"));
-            utilisateur.setCommande(commande);
             return utilisateur;
         }
     };
@@ -59,21 +58,20 @@ public class DAOAuthentificationMySQL implements IDAOAuthentification{
     }
     @Override
     public void saveUtilisateur(Utilisateur utilisateur) {
-        if (getUtilisateurByEmail(utilisateur.getEmail()) != null) {
-            jdbcTemplate.update("UPDATE UTILISATEUR SET nom = ?, prenom = ?, email = ?, mot_de_passe = ?, COMMANDE_id_commande = ? WHERE id_utilisateur = ?",
+        if (utilisateur.getIdUtilisateur() != null) {
+            jdbcTemplate.update("UPDATE UTILISATEUR SET nom = ?, prenom = ?, email = ?, mot_de_passe = ? WHERE id_utilisateur = ?",
                     utilisateur.getNom(),
                     utilisateur.getPrenom(),
                     utilisateur.getEmail(),
-                    utilisateur.getPassword(),
-                    utilisateur.getCommande().getIdCommande());
+                    utilisateur.getPassword());
+
             return;
         }
-        jdbcTemplate.update("INSERT INTO UTILISATEUR (nom, prenom, email, mot_de_passe, COMMANDE_id_commande) VALUES (?, ?, ?, ?, ?)",
+        jdbcTemplate.update("INSERT INTO UTILISATEUR (nom, prenom, email, mot_de_passe) VALUES (?, ?, ?, ?)",
                 utilisateur.getNom(),
                 utilisateur.getPrenom(),
                 utilisateur.getEmail(),
-                utilisateur.getPassword(),
-                utilisateur.getCommande().getIdCommande());
+                utilisateur.getPassword());
         }
     }
 
