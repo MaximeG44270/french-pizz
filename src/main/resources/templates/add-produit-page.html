@@ -8,70 +8,56 @@
 </div>
 <body>
 <div layout:fragment="content">
-    <main>
-        <div class="uk-container">
-
-            <h1 class="uk-heading-divider uk-text-center">Formulaire d'ajout de produit à la database</h1>
-
-            <form th:object="${produit}" class="uk-form-horizontal uk-margin-large" method="POST" th:action="@{/add-produit}">
-
-                <!-- Champ de nom-->
-
-                <div class="uk-margin">
-                    <!--Normalement le for d'un label est connecté à id d'un input
-                    et ici th:field="*{name}" va automatiquement générer un id portant le nom id = name-->
-                    <label class="uk-form-label" for="nom">Nom du produit</label>
-                    <div class="uk-form-controls">
-                        <input th:field="*{nom}" class="uk-input" type="text" placeholder="Nom produit"/>
+        <div class="container-add-produit">
+            <div class="title-connection-form">
+                <img src="/image/french-pizz.png" class="img-french-pizz" alt="french-pizz">
+                <img src="/image/inscription.png" class="img-inscription" alt="inscription">
+            </div>
+            <form th:object="${produit}" class="container-form" method="POST" th:action="@{/add-produit}">
+        <!----------------------------------------   NAME     ---------------------------------------------------------------->
+                <div class="Container-name">
+                    <label class="label-text-name" for="nom">Nom du produit</label>
+                    <div class="container-input-name">
+                        <input th:field="*{nom}" class="input-name" type="text" placeholder="Nom produit"/>
                     </div>
                 </div>
-
-                <!-- Champ de type-->
-                <div class="uk-margin">
-                    <label class="uk-form-label" for="type_produit">Choisissez le type de produit</label>
-                    <div class="uk-form-controls">
-                        <select th:field="*{typeProduit}" class="uk-select" aria-label="Select">
-                            <option value="" selected>Liste des types de produits</option>
-                            <option th:each="typeProduit : ${types}" th:value="${typeProduit.idTypeProduit}" th:text="${typeProduit.libelle}"></option>
+                <!----------------------------------------   idTypeProduit     ---------------------------------------------------------------->
+                <div class="container-itproduit">
+                    <label class="label-text-itproduit" for="type_produit">Choisissez le type de produit</label>
+                    <div class="container-option-itproduit">
+                        <select th:field="*{typeProduit}" class="select-itproduit" aria-label="Select">
+                            <option class="option-1-itproduit" value="" selected>Liste des types de produits</option>
+                            <option class="option-2-itproduit" th:each="typeProduit : ${types}" th:value="${typeProduit.idTypeProduit}" th:text="${typeProduit.libelle}"></option>
                         </select>
                     </div>
                 </div>
-
-                <!-- Champ de year-->
-                <div class="uk-margin">
-                    <label class="uk-form-label" for="description">Description du produit</label>
-                    <div class="uk-form-controls">
-                        <input th:field="*{description}" class="uk-input" type="text" placeholder="Description du produit"/>
-                    </div>
-
-                </div>
-
-                <!-- Champ de prix-->
-                <div class="uk-margin">
-                    <!--Normalement le for d'un label est connecté à id d'un input
-                    et ici th:field="*{name}" va automatiquement générer un id portant le nom id = name-->
-                    <label class="uk-form-label" for="prix">Quel est le prix du produit</label>
-                    <div class="uk-form-controls">
-                        <input th:field="*{prix}" class="uk-input" placeholder="prix en €"/>
+                <!----------------------------------------   Description Produit     ---------------------------------------------------------------->
+                <div class="container-description-produit">
+                    <label class="label-text-description-produit" for="description">Description du produit</label>
+                    <div class="container-input-description-produit">
+                        <input th:field="*{description}" class="input-description-produit" type="text" placeholder="Description du produit"/>
                     </div>
                 </div>
-
-                <!-- Champ de image -->
-                <div class="uk-margin">
-                    <!--Normalement le for d'un label est connecté à id d'un input
-                   et ici th:field="*{name}" va automatiquement générer un id portant le nom id = name-->
-                    <label class="uk-form-label" for="image_url">Lien de l'image</label>
-                    <div class="uk-form-controls">
-                        <textarea th:field="*{image_url}" class="uk-textarea"></textarea>
+                <!----------------------------------------   PRICE     ---------------------------------------------------------------->
+                <div class="container-price">
+                    <label class="label-text-price" for="prix">Quel est le prix du produit</label>
+                    <div class="container-input-price">
+                        <input th:field="*{prix}" class="input-price" placeholder="prix en €"/>
                     </div>
                 </div>
-
-                <div class="uk-margin">
-                    <input value="Ajouter le produit" type="submit" class="uk-button uk-button-primary uk-width-1-1"/>
+                <!----------------------------------------   LINK PICTURE     ---------------------------------------------------------------->
+                <div class="container-link-picture">
+                    <label class="label-text-link-picture" for="image_url">Lien de l'image</label>
+                    <div class="container-textarea-link-picture">
+                        <textarea th:field="*{image_url}" class="textarea-link-picture"></textarea>
+                    </div>
+                </div>
+                <!----------------------------------------   BUTTON     ---------------------------------------------------------------->
+                <div class="block-button-ajouter">
+                    <input value="Ajouter le produit" type="submit" class="button-ajouter"/>
                 </div>
             </form>
         </div>
-    </main>
 </div>
 </body>
 </html>

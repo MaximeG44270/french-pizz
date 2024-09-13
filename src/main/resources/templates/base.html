@@ -24,7 +24,7 @@
                 <ul>
                     <li><a href="home" class="li-modif">Accueil</a></li>
                     <li>Nos PIZZAS</li>
-                    <li><a href="menu" class="li-modif">Menu</a></li>
+                    <li><a href="menu" class="li-modif">Commander</a></li>
                     <li>Contact</li>
                 </ul>
             </nav>
@@ -33,7 +33,7 @@
                 <p class="number-header">02 51 48 24 94</p>
             </div>
             <div class="connection">
-                <a sec:authorize="!isAuthenticated()" href="/login-page">
+                <a sec:authorize="!isAuthenticated()" href="/login">
                     <img src="/image/login.png" class="icone-login" alt="connection">
                 </a>
                 <a sec:authorize="isAuthenticated()" href="/logout">
