@@ -8,7 +8,25 @@
 </div>
 <body>
 <div layout:fragment="content">
-
+    <img src="image/logo-devflix.png" class="logo-devflix" alt="devflix">
+    <form method="post" th:action="@{/login}" id="inscrireForm">
+        <h2 class="h2-connecter">Login</h2>
+        <div class="name">
+            <div class="container-label">
+                <label for="email">EMAIL</label>
+            </div>
+            <input type="text" id="email" name="username" class="input"/>
+        </div>
+        <div class="password">
+            <div class="container-label">
+                <label for="password">PASSWORD</label>
+            </div>
+            <input type="text" id="password" name="password" class="input"/>
+        </div>
+        <div class="button">
+            <button type="submit" value="Se Connecter" id="se-connecter">Login</button>
+        </div>
+    </form>
 </div>
 </body>
 </html>

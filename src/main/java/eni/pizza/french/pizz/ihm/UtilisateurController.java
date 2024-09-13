@@ -10,10 +10,12 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.security.Principal;
 
+@SessionAttributes({"loggedUser"})
 @Controller
 public class UtilisateurController {
     @Autowired
@@ -23,7 +25,7 @@ public class UtilisateurController {
         Utilisateur utilisateurConnected = (Utilisateur) model.getAttribute("utilisateurConnected");
         if (utilisateurConnected != null) {
             System.out.println("Vous êtes déjà connecté");
-            return "redirect:/";
+            return "redirect:/home";
         }
         return "login-page";
     }
@@ -33,11 +35,11 @@ public class UtilisateurController {
         Utilisateur utilisateur = authentificationManager.getConnectedUtilisateurs(email);
         if (utilisateur == null) {
             System.out.println("Vous n'avez pas réussi à vous connecter");
-            return "redirect:/";
+            return "redirect:/login";
         }
         model.addAttribute("utilisateur",utilisateur);
         System.out.printf("L'utilisateur ayant l'email %s est connecté.",utilisateur.getEmail());
-        return "redirect:/";
+        return "redirect:/home";
     }
 
     @GetMapping("add-user")
@@ -55,7 +57,7 @@ public class UtilisateurController {
             return "add-users";
         }
         authentificationManager.saveUtilisateur(utilisateur);
-        return "redirect:/";
+        return "redirect:/home";
 
     }
 
