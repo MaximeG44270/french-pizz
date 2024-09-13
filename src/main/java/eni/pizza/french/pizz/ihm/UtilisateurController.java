@@ -3,6 +3,7 @@ package eni.pizza.french.pizz.ihm;
 import eni.pizza.french.pizz.bll.IAuthentificationManager;
 import eni.pizza.french.pizz.bo.Utilisateur;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,6 +16,7 @@ import java.security.Principal;
 
 @Controller
 public class UtilisateurController {
+    @Autowired
     IAuthentificationManager authentificationManager;
     @GetMapping("login")
     public String login (Model model, RedirectAttributes redirectAttributes) {
