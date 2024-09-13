@@ -12,10 +12,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import java.security.Principal;
 
-@SessionAttributes({"loggedUser"})
+@SessionAttributes({"connectedMember"})
 @Controller
 public class UtilisateurController {
     @Autowired
@@ -40,6 +39,16 @@ public class UtilisateurController {
         model.addAttribute("utilisateur",utilisateur);
         System.out.printf("L'utilisateur ayant l'email %s est connecté.",utilisateur.getEmail());
         return "redirect:/home";
+    }
+
+    @PostMapping("login")
+    public String processLogin(@Valid @ModelAttribute(name="utilisateur") Utilisateur utilisateur, BindingResult bindingResult, Model model, RedirectAttributes redirectAttributes) {
+        if (bindingResult.hasErrors()){
+            System.out.println("Erreur de contrôle surface");
+            return "login-page";
+        }
+        authentificationManager.authenticate(utilisateur.getEmail(), utilisateur.getPassword());
+        return "redirect:/";
     }
 
     @GetMapping("add-user")

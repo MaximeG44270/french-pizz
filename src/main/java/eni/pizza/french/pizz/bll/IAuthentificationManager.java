@@ -8,6 +8,8 @@ public interface IAuthentificationManager {
 
     Utilisateur getConnectedUtilisateurs(String email);
 
+    Utilisateur authenticate(String email, String password);
+
     List<Utilisateur> getConnectedUtilisateurs();
 
     Utilisateur getUtilisateurById(Long id);
