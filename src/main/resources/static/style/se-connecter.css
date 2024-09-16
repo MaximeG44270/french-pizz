@@ -1,0 +1,101 @@
+.container-se-connecter {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    background-image: url("../image/fond-grand.png");
+    width: 100%;
+}
+
+.container-form-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-title-french-pizz {
+    width: 41vw;
+    margin-top: 6vh;
+}
+
+.text-title-se-connecter {
+    width: 25vw;
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-email {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-label {
+    margin-top: 10vh;
+}
+
+.label-text-email {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: poppins, sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #e1000f;
+}
+
+.input-email {
+    font-family: poppins, sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 10px;
+    width: 40vw;
+    height: 5vh;
+}
+
+.container-password {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.label-text-password {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: poppins, sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #e1000f;
+}
+
+.input-password {
+    font-family: poppins, sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 10px;
+    width: 40vw;
+    height: 5vh;
+}
+
+.button-login {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+#se-connecter {
+    font-family: poppins, sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: black;
+    border-radius: 10px;
+    width: 20vw;
+    height: 10vh;
+}
