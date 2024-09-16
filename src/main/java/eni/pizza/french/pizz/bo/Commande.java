@@ -1,11 +1,12 @@
 package eni.pizza.french.pizz.bo;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class Commande {
     private Long idCommande;
-    private LocalDate dateHeureLivraison;
+    private LocalDateTime dateHeureLivraison;
     private Client client;
     private String Livraison;
     private EtatCommande etatCommande;
@@ -14,7 +15,7 @@ public class Commande {
     private boolean estPayé;
     private List<DetailCommande> lignes;
 
-    public Commande(Long idCommande, LocalDate dateHeureLivraison, Client client, String livraison, EtatCommande etatCommande, Utilisateur utilisateur, double prixTotal, boolean estPayé) {
+    public Commande(Long idCommande, LocalDateTime dateHeureLivraison, Client client, String livraison, EtatCommande etatCommande, Utilisateur utilisateur, double prixTotal, boolean estPayé, List<DetailCommande> lignes) {
         this.idCommande = idCommande;
         this.dateHeureLivraison = dateHeureLivraison;
         this.client = client;
@@ -23,7 +24,9 @@ public class Commande {
         this.utilisateur = utilisateur;
         this.prixTotal = prixTotal;
         this.estPayé = estPayé;
+        this.lignes = lignes;
     }
+
     public Commande ()
     {
         super();
@@ -37,11 +40,11 @@ public class Commande {
         this.idCommande = idCommande;
     }
 
-    public LocalDate getDateHeureLivraison() {
+    public LocalDateTime getDateHeureLivraison() {
         return dateHeureLivraison;
     }
 
-    public void setDateHeureLivraison(LocalDate dateHeureLivraison) {
+    public void setDateHeureLivraison(LocalDateTime dateHeureLivraison) {
         this.dateHeureLivraison = dateHeureLivraison;
     }
 
@@ -91,5 +94,13 @@ public class Commande {
 
     public void setUtilisateur(Utilisateur utilisateur) {
         this.utilisateur = utilisateur;
+    }
+
+    public List<DetailCommande> getLignes() {
+        return lignes;
+    }
+
+    public void setLignes(List<DetailCommande> lignes) {
+        this.lignes = lignes;
     }
 }

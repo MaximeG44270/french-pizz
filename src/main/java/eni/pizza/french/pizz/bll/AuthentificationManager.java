@@ -34,6 +34,7 @@ public class AuthentificationManager implements IAuthentificationManager {
     }
     @Override
     public void saveUtilisateur(Utilisateur utilisateur) {
+        utilisateur.setPassword(PasswordEncoderFactories.createDelegatingPasswordEncoder().encode(utilisateur.getPassword()));
         daOAuthentification.saveUtilisateur(utilisateur);
     }
 }
