@@ -73,6 +73,16 @@
     margin-bottom: 0;
 }
 
+.text-title-produit {
+    font-family: poppins, sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #e1000f;
+    margin-top: -23px;
+    margin-left: 7vh;
+    margin-bottom: 0;
+}
+
 .text-title-pizza {
     font-family: poppins, sans-serif;
     font-size: 3rem;

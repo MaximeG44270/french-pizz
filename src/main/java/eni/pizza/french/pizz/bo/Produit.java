@@ -6,17 +6,19 @@ public class Produit {
     private String description;
     private double prix;
     private String image_url;
+    private int libelle;
     private TypeProduit typeProduit;
     public Produit() {
         super();
     }
 
-    public Produit(Long id_produit, String nom, String description, double prix, String image_url, TypeProduit typeProduit) {
+    public Produit(Long id_produit, String nom, String description, double prix, String image_url, int libelle, TypeProduit typeProduit) {
         this.id_produit = id_produit;
         this.nom = nom;
         this.description = description;
         this.prix = prix;
         this.image_url = image_url;
+        this.libelle = libelle;
         this.typeProduit = typeProduit;
     }
 
@@ -67,5 +69,11 @@ public class Produit {
         this.typeProduit = typeProduit;
     }
 
+    public int getLibelle() {
+        return libelle;
+    }
 
+    public void setLibelle(int libelle) {
+        this.libelle = libelle;
+    }
 }

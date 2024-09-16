@@ -36,10 +36,9 @@ public class SecurityConfig {
 
         http
                 .authorizeHttpRequests((authorize) -> authorize
-                                //hasAuthority() permet de gérer un seul et unique ROLE de l'user connecté
-                                // ** sert à remplacer {id} de l'url add-movie/{id}
-                                .requestMatchers(HttpMethod.GET,"/add-produit/**").hasAuthority("ROLE_ADMIN")
-                                .requestMatchers(HttpMethod.POST,"/add-produit/**").hasAuthority("ROLE_ADMIN")
+
+                                .requestMatchers(HttpMethod.GET,"/add-produit/**").permitAll()
+                                .requestMatchers(HttpMethod.POST,"/add-produit/**").permitAll()
                                 .requestMatchers(HttpMethod.GET,"/add-user/**").permitAll()
                                 .requestMatchers(HttpMethod.POST,"/add-user/**").permitAll()
                                 .requestMatchers(HttpMethod.GET,"/login/**").permitAll()
@@ -52,6 +51,8 @@ public class SecurityConfig {
                                 .requestMatchers("/login").permitAll()
                                 .requestMatchers("/user-connected").permitAll()
                                 .requestMatchers("/menu").permitAll()
+                                .requestMatchers("/admin").permitAll()
+                                .requestMatchers("/link").permitAll()
                                 .requestMatchers("/logout").permitAll()
                                 .requestMatchers("/add-user").permitAll()
                                 //toutes les requêtes commençant par vendor (ex: celles liées aux CSS et JS de uikit) sont autorisées

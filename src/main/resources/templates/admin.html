@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{/base}">
+<div layout:fragment="css-title">
+  <title>Menu - French PIZZ</title>
+  <link rel="stylesheet" href="/style/admin.css">
+</div>
+<body>
+<div layout:fragment="content">
+  <div class="container-title-admin">
+    <img class="text-title-french-pizz" src="/image/french-pizz.png">
+    <img class="text-title-admin" src="/image/admin.png">
+  </div>
+  <div class="all-button">
+    <div class="button-delivery">
+      <div class="button-redirect-delivery">les livraisons</div>
+    </div>
+    <div class="button-command">
+      <div class="button-redirect-command">Les Commandes</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

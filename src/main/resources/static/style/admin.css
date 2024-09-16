@@ -1,0 +1,29 @@
+.container-title-admin {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    background-image: url("../image/fond-grand.png");
+    width: 100%;
+    align-items: center;
+}
+
+.text-title-french-pizz {
+    width: 41vw;
+    margin-top: 6vh;
+}
+
+.text-title-admin {
+    width: 25vw;
+}
+
+.all-button {
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+}
+
+
+.button-delivery {
+
+}
