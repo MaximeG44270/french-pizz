@@ -69,12 +69,17 @@ li:hover {
     margin-left: 6vw;
 }
 
+.connexion {
+    margin-left: 5vw;
+    margin-top: 3vh;
+}
+
 .icone-login {
-    width: 3vw;
+    width: 2vw;
 }
 
 .icone-logout {
-    width: 3vw;
+    width: 2vw;
 }
 
 .number-header {
