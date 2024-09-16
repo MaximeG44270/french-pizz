@@ -24,9 +24,9 @@ public class SecurityConfig {
         userDetailsManager.setUsersByUsernameQuery("SELECT email, mot_de_passe, 1 FROM utilisateur WHERE email=?");
         userDetailsManager.setAuthoritiesByUsernameQuery("SELECT utilisateur.email, role.libelle \n" +
                 "FROM utilisateur" +
-                "INNER JOIN role_utilisateur ON role_utilisateur.UTILISATEUR_id_utilisateur = utilisateur.id_utilisateur" +
-                "INNER JOIN role ON role_utilisateur.ROLE_id_role = ROLE.id_role" +
-                "WHERE email=?");
+                " INNER JOIN role_utilisateur ON role_utilisateur.UTILISATEUR_id_utilisateur = utilisateur.id_utilisateur" +
+                " INNER JOIN role ON role_utilisateur.ROLE_id_role = ROLE.id_role" +
+                " WHERE email=?");
 
         return userDetailsManager;
     }
@@ -46,6 +46,7 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.POST,"/login/**").permitAll()
                                 .requestMatchers("add-produit/**").permitAll()
                                 .requestMatchers("/add-user/**").permitAll()
+                                .requestMatchers("/admin").permitAll()
                                 .requestMatchers("/").permitAll()
                                 .requestMatchers("/home").permitAll()
                                 .requestMatchers("/login").permitAll()
