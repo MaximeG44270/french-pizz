@@ -22,7 +22,11 @@ public class SecurityConfig {
     public UserDetailsManager userDetailsManager(DataSource dataSource) {
         JdbcUserDetailsManager userDetailsManager = new JdbcUserDetailsManager(dataSource);
         userDetailsManager.setUsersByUsernameQuery("SELECT email, mot_de_passe, 1 FROM utilisateur WHERE email=?");
-        userDetailsManager.setAuthoritiesByUsernameQuery("SELECT utilisateur.email, roles.libelle,  FROM utilisateur INNER JOIN roles ON role_utilisateur.ROLE_id_role=4 WHERE email=?");
+        userDetailsManager.setAuthoritiesByUsernameQuery("SELECT utilisateur.email, role.libelle \n" +
+                "FROM utilisateur" +
+                "INNER JOIN role_utilisateur ON role_utilisateur.UTILISATEUR_id_utilisateur = utilisateur.id_utilisateur" +
+                "INNER JOIN role ON role_utilisateur.ROLE_id_role = ROLE.id_role" +
+                "WHERE email=?");
 
         return userDetailsManager;
     }
@@ -36,13 +40,15 @@ public class SecurityConfig {
                                 // ** sert à remplacer {id} de l'url add-movie/{id}
                                 .requestMatchers(HttpMethod.GET,"/add-produit/**").hasAuthority("ROLE_ADMIN")
                                 .requestMatchers(HttpMethod.POST,"/add-produit/**").hasAuthority("ROLE_ADMIN")
+                                .requestMatchers(HttpMethod.GET,"/add-user/**").permitAll()
+                                .requestMatchers(HttpMethod.POST,"/add-user/**").permitAll()
                                 .requestMatchers("add-produit/**").permitAll()
                                 .requestMatchers("/add-user/**").permitAll()
-                                .requestMatchers("/movie-details/**").hasAnyAuthority("ROLE_ADMIN", "ROLE_MEMBRE")
                                 .requestMatchers("/").permitAll()
                                 .requestMatchers("/login").permitAll()
                                 .requestMatchers("/user-connected").permitAll()
                                 .requestMatchers("/logout").permitAll()
+                                .requestMatchers("/add-user").permitAll()
                                 //toutes les requêtes commençant par vendor (ex: celles liées aux CSS et JS de uikit) sont autorisées
                                 //ainsi SpringSecurity ne bloque plus le chargement d éléments stockés dans vendor
                                 .requestMatchers("/vendor/**").permitAll()

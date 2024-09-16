@@ -12,17 +12,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.security.Principal;
 
-@SessionAttributes({"connectedMember"})
+@SessionAttributes({"connectedUser"})
 @Controller
 public class UtilisateurController {
     @Autowired
     IAuthentificationManager authentificationManager;
     @GetMapping("login")
     public String login (Model model, RedirectAttributes redirectAttributes) {
-        Utilisateur utilisateurConnected = (Utilisateur) model.getAttribute("utilisateurConnected");
+        Utilisateur utilisateurConnected = (Utilisateur) model.getAttribute("connectedUser");
         if (utilisateurConnected != null) {
             System.out.println("Vous êtes déjà connecté");
             return "redirect:/home";
@@ -41,7 +42,6 @@ public class UtilisateurController {
         System.out.printf("L'utilisateur ayant l'email %s est connecté.",utilisateur.getEmail());
         return "redirect:/home";
     }
-
     @PostMapping("login")
     public String processLogin(@Valid @ModelAttribute(name="utilisateur") Utilisateur utilisateur, BindingResult bindingResult, Model model, RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()){
@@ -70,6 +70,11 @@ public class UtilisateurController {
         authentificationManager.saveUtilisateur(utilisateur);
         return "redirect:/home";
 
+    }
+    @GetMapping("logout")
+    public String logout(SessionStatus sessionStatus, RedirectAttributes redirectAttributes, Model model) {
+        sessionStatus.setComplete();
+        return "redirect:/login";
     }
 
 }
