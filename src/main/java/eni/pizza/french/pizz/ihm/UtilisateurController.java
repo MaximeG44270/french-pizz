@@ -74,6 +74,7 @@ public class UtilisateurController {
     @GetMapping("logout")
     public String logout(SessionStatus sessionStatus, RedirectAttributes redirectAttributes, Model model) {
         sessionStatus.setComplete();
+        System.out.printf("Vous vous êtes déconnectés");
         return "redirect:/login";
     }
 

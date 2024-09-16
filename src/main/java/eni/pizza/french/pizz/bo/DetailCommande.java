@@ -10,6 +10,9 @@ public class DetailCommande {
         this.commande = commande;
         this.quantity = quantity;
     }
+    public DetailCommande(){
+        super();
+    }
 
     public int getQuantity() {
         return quantity;

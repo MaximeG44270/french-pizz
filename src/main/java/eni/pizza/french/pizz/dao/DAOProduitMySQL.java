@@ -83,7 +83,7 @@ public class DAOProduitMySQL implements IDAOProduit {
         }
 
         namedParameterJdbcTemplate.update(sql, mapSqlParameterSource);
-        System.out.println("Produit inséré en table pizza de BDD db_pizza : " +produit);
+        System.out.println("Produit inséré en table produit de BDD db_pizza : " +produit);
 
     }
     @Override

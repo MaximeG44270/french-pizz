@@ -8,6 +8,9 @@ public class EtatCommande {
         this.libelle = libelle;
         this.idEtat = idEtat;
     }
+    public EtatCommande (){
+        super();
+    }
 
     public Long getIdEtat() {
         return idEtat;
