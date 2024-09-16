@@ -44,6 +44,11 @@ public class AppController {
     public String adminPage() {
         return "admin";
     }
+
+    @GetMapping("delivery")
+    public String deliveryPage() {
+        return "delivery";
+    }
 }
 
 

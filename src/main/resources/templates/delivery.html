@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{/base}">
+<div layout:fragment="css-title">
+    <title>Delivery - French PIZZ</title>
+    <link rel="stylesheet" href="/style/delivery.css">
+</div>
+<body>
+<div layout:fragment="content">
+    <div class="container-command-to-delivery">
+        <div class="container-form-title">
+            <img class="text-title-french-pizz" src="/image/french-pizz.png">
+            <img class="text-title-se-connecter" src="/image/se-connecter.png">
+        </div>
+        <div class="container-all-command">
+            <div th:each="commande : ${commande}" class="rectangle-command-delivery">
+                <a th:href="@{'/delivery-detail/' + ${commande.id_commande}}" class="text-link-id-commande">
+                    <div class="number-id-commande">
+                        <p class="text-number-id-commande" th:text="${commande.id_commande}"></p>
+                    </div>
+                    <div class="bloc-text-first-last-name">
+                        <p class="text-first-last-name" th:text="${client.nom} + ${client.prenom}"></p>
+                    </div>
+                    <div class="bloc-text-location">
+                        <p class="text-first-last-name" th:text="${client.rue} + ${client.code_postal} + ${client.ville}"></p>
+                    </div>
+                    <div class=bloc-text-delivery">
+                        <p class="text-delivery" th:text="${etat.libelle}"></p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
