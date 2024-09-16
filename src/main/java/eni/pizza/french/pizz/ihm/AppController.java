@@ -32,10 +32,6 @@ public class AppController {
 
         model.addAttribute("produits", produits);
 
-//        if (!produits.isEmpty()) {
-//            Produit lastProduit = produit.get(produit.size() - 1);
-//            model.addAttribute("lastProduit", lastProduit);
-//        }
         return "menu";
     }
 
@@ -43,4 +39,11 @@ public class AppController {
     public String linkPage() {
         return "link";
     }
+
+    @GetMapping("admin")
+    public String adminPage() {
+        return "admin";
+    }
 }
+
+
