@@ -50,6 +50,7 @@ public class SecurityConfig {
                                 .requestMatchers("/login").permitAll()
                                 .requestMatchers("/user-connected").permitAll()
                                 .requestMatchers("/menu").permitAll()
+                                .requestMatchers("/admin").permitAll()
                                 .requestMatchers("/link").permitAll()
                                 .requestMatchers("/logout").permitAll()
                                 .requestMatchers("/add-user").permitAll()

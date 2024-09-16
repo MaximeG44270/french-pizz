@@ -37,7 +37,6 @@ public class DAOProduitMySQL implements IDAOProduit {
             produit.setDescription(rs.getString("description"));
             produit.setPrix(rs.getDouble("prix"));
             produit.setImage_url(rs.getString("image_url"));
-            produit.setLibelle(rs.getInt("libelle"));
             TypeProduit typeProduit = new TypeProduit();
             typeProduit.setIdTypeProduit(rs.getLong("TYPE_PRODUIT_id_type_produit"));
             produit.setTypeProduit(typeProduit);
@@ -75,13 +74,12 @@ public class DAOProduitMySQL implements IDAOProduit {
         mapSqlParameterSource.addValue("new_description", produit.getDescription());
         mapSqlParameterSource.addValue("new_prix", produit.getPrix());
         mapSqlParameterSource.addValue("new_image_url", produit.getImage_url());
-        mapSqlParameterSource.addValue("new_libelle", produit.getLibelle());
         mapSqlParameterSource.addValue("new_id_type_produit", produit.getTypeProduit().getIdTypeProduit());
 
         if(selectProduitById(produit.getId_produit()) != null){
-            sql= "UPDATE produit SET nom = :new_nom, description = :new_description, prix = :new_prix, image_url = :new_image_url, libelle = :new_libelle, id_type_produit = new_id_type_produit:  WHERE id_produit = :new_id_produit";
+            sql= "UPDATE produit SET nom = :new_nom, description = :new_description, prix = :new_prix, image_url = :new_image_url, id_type_produit = new_id_type_produit:  WHERE id_produit = :new_id_produit";
         } else {
-            sql = "INSERT INTO produit (id_produit, nom, description, prix, image_url, libelle, TYPE_PRODUIT_id_type_produit) VALUES (:new_id_produit, :new_nom, :new_description, :new_prix, :new_image_url, :new_libelle, :new_id_type_produit)";
+            sql = "INSERT INTO produit (id_produit, nom, description, prix, image_url, TYPE_PRODUIT_id_type_produit) VALUES (:new_id_produit, :new_nom, :new_description, :new_prix, :new_image_url, :new_id_type_produit)";
         }
 
         namedParameterJdbcTemplate.update(sql, mapSqlParameterSource);
