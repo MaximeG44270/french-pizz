@@ -9,28 +9,104 @@
 <body>
 <div layout:fragment="content">
     <div class="container-command-to-delivery">
-        <div class="container-form-title">
+        <div class="container-delivery-title">
             <img class="text-title-french-pizz" src="/image/french-pizz.png">
-            <img class="text-title-se-connecter" src="/image/se-connecter.png">
+            <img class="text-title-delivery" src="/image/les-livraisons.png">
         </div>
-        <div class="container-all-command">
-            <div th:each="commande : ${commande}" class="rectangle-command-delivery">
-                <a th:href="@{'/delivery-detail/' + ${commande.id_commande}}" class="text-link-id-commande">
-                    <div class="number-id-commande">
-                        <p class="text-number-id-commande" th:text="${commande.id_commande}"></p>
+        <div class="list-of-command">
+            <div class="container-command-delivery">
+                <a href="" class="link-container-command-delivery">
+                    <div class="container-delivery">
+                        <div class="bloc-text-id-commande">
+                            <p class="text-id-commande">1</p>
+                        </div>
+                        <div class="bloc-text-first-last-name">
+                            <p class="text-first-last-name">DURANT Mathéo</p>
+                        </div>
+                        <div class="bloc-text-adress">
+                            <p class="text-adress">18 Rue des Ampères - 75000 PARIS</p>
+                        </div>
+                        <div class="bloc-text-delivery">
+                            <p class="text-delivery">En livraison</p>
+                        </div>
                     </div>
-                    <div class="bloc-text-first-last-name">
-                        <p class="text-first-last-name" th:text="${client.nom} + ${client.prenom}"></p>
+                </a>
+            </div>
+            <div class="container-command-delivery">
+                <a href="" class="link-container-command-delivery">
+                    <div class="container-delivery">
+                        <div class="bloc-text-id-commande">
+                            <p class="text-id-commande">2</p>
+                        </div>
+                        <div class="bloc-text-first-last-name">
+                            <p class="text-first-last-name">DI Stephano Mael</p>
+                        </div>
+                        <div class="bloc-text-adress">
+                            <p class="text-adress">2 rue du Bourg - 75000 PARIS</p>
+                        </div>
+                        <div class="bloc-text-delivery">
+                            <p class="text-delivery">En livraison</p>
+                        </div>
                     </div>
-                    <div class="bloc-text-location">
-                        <p class="text-first-last-name" th:text="${client.rue} + ${client.code_postal} + ${client.ville}"></p>
+                </a>
+            </div>
+            <div class="container-command-delivery">
+                <a href="" class="link-container-command-delivery">
+                    <div class="container-delivery">
+                        <div class="bloc-text-id-commande">
+                            <p class="text-id-commande">3</p>
+                        </div>
+                        <div class="bloc-text-first-last-name">
+                            <p class="text-first-last-name">Pepin Romain</p>
+                        </div>
+                        <div class="bloc-text-adress">
+                            <p class="text-adress">14 rue des Alouettes - 75000 PARIS</p>
+                        </div>
+                        <div class="bloc-text-delivery">
+                            <p class="text-delivery">Pret</p>
+                        </div>
                     </div>
-                    <div class=bloc-text-delivery">
-                        <p class="text-delivery" th:text="${etat.libelle}"></p>
+                </a>
+            </div>
+            <div class="container-command-delivery">
+                <a href="" class="link-container-command-delivery">
+                    <div class="container-delivery mb">
+                        <div class="bloc-text-id-commande">
+                            <p class="text-id-commande">4</p>
+                        </div>
+                        <div class="bloc-text-first-last-name">
+                            <p class="text-first-last-name">Fourage Benoit</p>
+                        </div>
+                        <div class="bloc-text-adress">
+                            <p class="text-adress">104 Route de Paris - 75000 PARIS</p>
+                        </div>
+                        <div class="bloc-text-delivery">
+                            <p class="text-delivery">Pret</p>
+                        </div>
                     </div>
                 </a>
             </div>
         </div>
+<!--        <div class="container-all-command">-->
+<!--            <div th:each="commande : ${commande}" class="rectangle-command-delivery">-->
+<!--                <a th:href="@{'/delivery-detail/' + ${commande.id_commande}}" class="text-link-id-commande">-->
+<!--                    <div class="number-id-commande">-->
+<!--                        <p class="text-number-id-commande" th:text="${commande.id_commande}"></p>-->
+<!--                    </div>-->
+<!--                    <div class="bloc-text-first-last-name">-->
+<!--                        <p class="text-first-last-name" th:text="${client.nom} + ${client.prenom}"></p>-->
+<!--                    </div>-->
+<!--                    <div class="bloc-text-location">-->
+<!--                        <p class="text-first-last-name" th:text="${client.rue} + ${client.code_postal} + ${client.ville}"></p>-->
+<!--                    </div>-->
+
+
+<!--                    <div class=bloc-text-delivery">-->
+<!--                        <p class="text-delivery" th:text="${etat.libelle}"></p>-->
+<!--                    </div>-->
+<!--                </a>-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
 </div>
 </body>
