@@ -19,12 +19,12 @@ public class DAOProduitMySQL implements IDAOProduit {
     @Autowired
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
-
     /**
      * Le code qui permet de savoir comment relier/convertir (mapper) un résultat SQL en objet Java
      * autrement dit comment récupérer un movie de la table movie de notre BDD MySql db_movie
      * et l'injecter sous forme d'instance de class Movie sous java
      */
+
     static final RowMapper<Produit> PRODUIT_ROW_MAPPER = new RowMapper<Produit>() {
 
         @Override
@@ -43,7 +43,6 @@ public class DAOProduitMySQL implements IDAOProduit {
             return produit;
         }
     };
-
 
     @Override
     public List<Produit> findAllProduit() {
@@ -91,5 +90,4 @@ public class DAOProduitMySQL implements IDAOProduit {
         int nbSuppression = jdbcTemplate.update("DELETE produit FROM produit WHERE id_produit = ?", id);
         System.out.println("Produit supprimé");
     }
-
 }

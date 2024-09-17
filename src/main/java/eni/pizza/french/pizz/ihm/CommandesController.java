@@ -18,24 +18,29 @@ public class CommandesController
 {
     @Autowired
     ICommandesManager commandesManager;
+
     @GetMapping ("panier")
     public String panier() {
         return "panier";
     }
+
+
     @GetMapping("list-commandes")
     public String viewCommandes(Model model, RedirectAttributes redirectAttributes)
     {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
         String authorities = authentication.getAuthorities().toString();
-//         Récupérer les données de l'utilisateur connecté
+
         if (authorities.contains("[Gérant]"))
         {
-            model.addAttribute("commandes", commandesManager.getAllCommandesGerant()); }
+            List<Commande> commandes = commandesManager.getAllCommandesGerant();
+            model.addAttribute("commandes", commandes); }
         else if (authorities.contains("[Pizzaolo]"))
             {model.addAttribute("commandes", commandesManager.getAllCommandesPizzaolo());}
         else if (authorities.contains("[Livreur]"))
             {model.addAttribute("commandes", commandesManager.getAllCommandesLivreur());}
-        else System.out.println("Vous ne pouvez pas y accéder !");
-        return "/delivery";
+        else System.out.println("Vous ne pouvez pas y accéder");
+        return "delivery";
     }
 }

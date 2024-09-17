@@ -17,5 +17,4 @@ public class StringToTypeProduitConverter implements Converter<String, TypeProdu
 
         return letypeProduit;
     }
-
 }

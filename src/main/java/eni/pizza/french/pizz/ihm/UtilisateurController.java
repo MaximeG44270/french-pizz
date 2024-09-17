@@ -77,5 +77,4 @@ public class UtilisateurController {
         System.out.printf("Vous vous êtes déconnectés");
         return "redirect:/login";
     }
-
 }

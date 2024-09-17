@@ -31,18 +31,22 @@
 
 .container-command-delivery {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     margin-top: 10vh;
 }
 
 .link-container-command-delivery {
     text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .container-delivery {
     display: flex;
     flex-direction: row;
+    margin-bottom: 10vh;
 }
 
 .bloc-text-id-commande {
