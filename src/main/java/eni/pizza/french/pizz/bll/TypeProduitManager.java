@@ -2,11 +2,13 @@ package eni.pizza.french.pizz.bll;
 
 import eni.pizza.french.pizz.bo.TypeProduit;
 import eni.pizza.french.pizz.dao.IDAOTypeProduit;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
 public class TypeProduitManager implements ITypeProduitManager {
+    @Autowired
     private static IDAOTypeProduit daoTypeProduit;
 
     public TypeProduitManager(IDAOTypeProduit daoTypeProduit) {

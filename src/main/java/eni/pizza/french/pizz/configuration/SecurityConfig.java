@@ -47,6 +47,7 @@ public class SecurityConfig {
                                 .requestMatchers("/add-user/**").permitAll()
                                 .requestMatchers("/admin").permitAll()
                                 .requestMatchers("/").permitAll()
+                                .requestMatchers("/list-commandes").permitAll()
                                 .requestMatchers("/home").permitAll()
                                 .requestMatchers("/login").permitAll()
                                 .requestMatchers("/user-connected").permitAll()
