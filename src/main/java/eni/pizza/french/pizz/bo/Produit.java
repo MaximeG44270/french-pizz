@@ -1,7 +1,7 @@
 package eni.pizza.french.pizz.bo;
 
 public class Produit {
-    private Long id_produit;
+    private Long idProduit;
     private String nom;
     private String description;
     private double prix;
@@ -12,8 +12,8 @@ public class Produit {
         super();
     }
 
-    public Produit(Long id_produit, String nom, String description, double prix, String image_url, int libelle, TypeProduit typeProduit) {
-        this.id_produit = id_produit;
+    public Produit(Long idProduit, String nom, String description, double prix, String image_url, int libelle, TypeProduit typeProduit) {
+        this.idProduit = idProduit;
         this.nom = nom;
         this.description = description;
         this.prix = prix;
@@ -22,12 +22,12 @@ public class Produit {
         this.typeProduit = typeProduit;
     }
 
-    public Long getId_produit() {
-        return id_produit;
+    public Long getIdProduit() {
+        return idProduit;
     }
 
-    public void setId_produit(Long id_produit) {
-        this.id_produit = id_produit;
+    public void setIdProduit(Long idProduit) {
+        this.idProduit = idProduit;
     }
 
     public String getNom() {

@@ -2,6 +2,7 @@ package eni.pizza.french.pizz.dao;
 
 import eni.pizza.french.pizz.bo.Produit;
 import eni.pizza.french.pizz.bo.TypeProduit;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -13,13 +14,11 @@ import java.sql.SQLException;
 import java.util.List;
 @Repository
 public class DAOProduitMySQL implements IDAOProduit {
+    @Autowired
     private JdbcTemplate jdbcTemplate;
+    @Autowired
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
-    public DAOProduitMySQL(JdbcTemplate jdbcTemplate, NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
-        this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
-    }
 
     /**
      * Le code qui permet de savoir comment relier/convertir (mapper) un résultat SQL en objet Java
@@ -32,7 +31,7 @@ public class DAOProduitMySQL implements IDAOProduit {
         public Produit mapRow(ResultSet rs, int rowNum) throws SQLException {
             Produit produit = new Produit();
 
-            produit.setId_produit(rs.getLong("id_produit"));
+            produit.setIdProduit(rs.getLong("id_produit"));
             produit.setNom(rs.getString("nom"));
             produit.setDescription(rs.getString("description"));
             produit.setPrix(rs.getDouble("prix"));
@@ -69,14 +68,14 @@ public class DAOProduitMySQL implements IDAOProduit {
         String sql;
 
         MapSqlParameterSource mapSqlParameterSource = new MapSqlParameterSource();
-        mapSqlParameterSource.addValue("new_id_produit", produit.getId_produit());
+        mapSqlParameterSource.addValue("new_id_produit", produit.getIdProduit());
         mapSqlParameterSource.addValue("new_nom", produit.getNom());
         mapSqlParameterSource.addValue("new_description", produit.getDescription());
         mapSqlParameterSource.addValue("new_prix", produit.getPrix());
         mapSqlParameterSource.addValue("new_image_url", produit.getImage_url());
         mapSqlParameterSource.addValue("new_id_type_produit", produit.getTypeProduit().getIdTypeProduit());
 
-        if(selectProduitById(produit.getId_produit()) != null){
+        if(selectProduitById(produit.getIdProduit()) != null){
             sql= "UPDATE produit SET nom = :new_nom, description = :new_description, prix = :new_prix, image_url = :new_image_url, id_type_produit = new_id_type_produit:  WHERE id_produit = :new_id_produit";
         } else {
             sql = "INSERT INTO produit (id_produit, nom, description, prix, image_url, TYPE_PRODUIT_id_type_produit) VALUES (:new_id_produit, :new_nom, :new_description, :new_prix, :new_image_url, :new_id_type_produit)";

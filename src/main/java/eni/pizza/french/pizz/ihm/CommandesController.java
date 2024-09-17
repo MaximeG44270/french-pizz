@@ -37,6 +37,6 @@ public class CommandesController
         else if (authorities.contains("[Livreur]"))
             {model.addAttribute("commandes", commandesManager.getAllCommandesLivreur());}
         else System.out.println("Vous ne pouvez pas y accéder");
-        return "menu";
+        return "/delivery";
     }
 }
