@@ -1,4 +1,4 @@
-body,html {
+ body,html {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -244,11 +244,58 @@ h2 {
 }
 
 /*--------------------------  CAROUSEL  ------------------------------------------------------------------------*/
-.carousel-fond {
+.container-carousel {
     width: 100%;
-    height: 100%;
+    height: 60vh;
+    background-image: url("../image/carousel-fond.png");
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    position: relative;
 }
 
+.container-carousel:hover .container-carousel-logo {
+    animation-play-state: paused;
+}
+
+.container-carousel:before,
+.container-carousel:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    z-index: 2;
+}
+
+.container-carousel:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255,255,255,0),red);
+}
+
+ .container-carousel:after {
+     right: 0;
+     background: linear-gradient(to left, rgba(255,255,255,0),red);
+ }
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.container-carousel-logo {
+    display: inline-block;
+    animation: 10s slide infinite linear;
+}
+
+.container-carousel-logo img {
+    height: 40vh;
+    margin: 0 50px;
+}
 /*--------------------------  CONTAINER 2  ------------------------------------------------------------------------*/
 .container-2 {
     width: 100%;
