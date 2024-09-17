@@ -35,11 +35,6 @@ public class AppController {
         return "menu";
     }
 
-    @GetMapping("link")
-    public String linkPage() {
-        return "link";
-    }
-
     @GetMapping("admin")
     public String adminPage() {
         return "admin";
