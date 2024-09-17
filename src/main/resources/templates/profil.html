@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{/base}">
+<div layout:fragment="css-title">
+    <title>Profil Utilisateur</title>
+    <link rel="stylesheet" href="style/menu.css">
+</div>
+<body>
+<div layout:fragment="content">
+    <div>
+        <h3>Votre email :</h3>
+        <p th:text="${email}"></p>
+        <h3>Votre rôle :</h3>
+        <p th:text="${authorities}"></p>
+
+
+    </div>
+</div>
+
+
+</body>
+</html>

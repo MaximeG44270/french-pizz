@@ -51,6 +51,15 @@ public class AppController {
 
         return "delivery";
     }
+    @GetMapping("profil")
+    public String profil(Model model, RedirectAttributes redirectAttributes) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String email = authentication.getName();
+        String authorities = authentication.getAuthorities().toString();
+        model.addAttribute("email",email);
+        model.addAttribute("authorities",authorities);
+        return "profil";
+    }
 }
 
 

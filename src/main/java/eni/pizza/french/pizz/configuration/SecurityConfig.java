@@ -54,6 +54,7 @@ public class SecurityConfig {
                                 .requestMatchers("/menu").permitAll()
                                 .requestMatchers("/admin").permitAll()
                                 .requestMatchers("/delivery").permitAll()
+                                .requestMatchers("profil").permitAll()
                                 .requestMatchers("/link").permitAll()
                                 .requestMatchers("/logout").permitAll()
                                 .requestMatchers("/add-user").permitAll()

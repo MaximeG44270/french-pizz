@@ -68,7 +68,7 @@ public class UtilisateurController {
         }
 
         authentificationManager.saveUtilisateur(utilisateur);
-        return "redirect:/home";
+        return "redirect:/livraison";
 
     }
     @GetMapping("logout")
