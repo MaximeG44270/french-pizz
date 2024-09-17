@@ -47,7 +47,7 @@ public class DAOCommandesMySQL implements IDAOCommandes {
     }
     @Override
     public List<Commande> findAllCommandesLivreur() {
-        return jdbcTemplate.query("SELECT * FROM commande WHERE date_heure_livraison != null && (ETAT_id_etat = 1 || ETAT_id_etat = 2)", COMMANDE_ROW_MAPPER);
+        return jdbcTemplate.query("SELECT * FROM commande WHERE livraison==1 && (ETAT_id_etat = 1 || ETAT_id_etat = 2)", COMMANDE_ROW_MAPPER);
     }
     @Override
     public Commande selectCommandeById(Long id) {
