@@ -16,22 +16,22 @@
         <div class="list-of-command">
             <div class="list-of-command">
                 <div class="container-command-delivery">
-                    <div th:each="commande : ${commandes}" class="container-delivery">
-                        <a th:href="@{/commande-detail/{id}(id=${commande.idCommande})}" class="link-container-command-delivery">
-                            <div class="bloc-text-id-commande">
-                                <p th:text="${commande.idCommande}" class="text-id-commande"></p>
-                            </div>
-                            <div class="bloc-text-first-last-name">
-                                <p th:text="${commande.client.prenom} + ' ' + ${commande.client.nom}" class="text-first-last-name"></p>
-                            </div>
-                            <div class="bloc-text-adress">
-                                <p th:text="${commande.client.adresse}" class="text-adress"></p>
-                            </div>
-                            <div class="bloc-text-delivery">
-                                <p th:text="${commande.livraison ? 'Livraison' : 'Pas de livraison'}" class="text-delivery"></p>
-                            </div>
-                        </a>
-                    </div>
+<!--                    <div th:each="commande : ${commandes}" class="container-delivery">-->
+<!--                        <a th:href="@{'/commande-detail/' + ${commande.idCommande}}" class="link-container-command-delivery">-->
+<!--                            <div class="bloc-text-id-commande">-->
+<!--                                <p th:text="${commande.idCommande}" class="text-id-commande"></p>-->
+<!--                            </div>-->
+<!--                            <div class="bloc-text-first-last-name">-->
+<!--                                <p class="text-first-last-name"></p>-->
+<!--                            </div>-->
+<!--                            <div class="bloc-text-adress">-->
+<!--                                <p th:text="${commande.client.adresse}" class="text-adress"></p>-->
+<!--                            </div>-->
+<!--                            <div class="bloc-text-delivery">-->
+<!--                                <p th:text="${commande.livraison ? 'Livraison' : 'Pas de livraison'}" class="text-delivery"></p>-->
+<!--                            </div>-->
+<!--                        </a>-->
+<!--                    </div>-->
                 </div>
             </div>
 

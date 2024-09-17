@@ -42,6 +42,7 @@ public class AppController {
 
     @GetMapping("delivery")
     public String deliveryPage() {
+
         return "delivery";
     }
 }
