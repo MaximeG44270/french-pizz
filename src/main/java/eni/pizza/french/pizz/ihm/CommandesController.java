@@ -26,7 +26,6 @@ public class CommandesController
     public String viewCommandes(Model model, RedirectAttributes redirectAttributes)
     {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String username = authentication.getName();
         String authorities = authentication.getAuthorities().toString();
 //         Récupérer les données de l'utilisateur connecté
         if (authorities.contains("[Gérant]"))
