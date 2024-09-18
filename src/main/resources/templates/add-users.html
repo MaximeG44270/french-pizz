@@ -33,7 +33,7 @@
       <div class="container-email">
         <label class="label-text-email" for="email">Votre email</label>
         <div class="container-input-email">
-          <input th:field="*{email}" class="input-email" type="email" placeholder="Email"/>
+          <input th:field="*{email}" class="input-email" type="username" placeholder="Email"/>
         </div>
       </div>
       <!----------------------------------------   PASSWORD     ---------------------------------------------------------------->
@@ -41,6 +41,27 @@
         <label class="label-text-password" for="password">Votre mot de passe</label>
         <div class="container-input-password">
           <input th:field="*{password}" class="input-password" type="password" placeholder="Mot de passe"/>
+        </div>
+      </div>
+      <!----------------------------------------   Rue     ---------------------------------------------------------------->
+      <div class="container-password">
+        <label class="label-text-password" for="rue">Votre rue</label>
+        <div class="container-input-password">
+          <input th:field="*{rue}" class="input-password" type="text" placeholder="Rue"/>
+        </div>
+      </div>
+      <!----------------------------------------   Code Postal     ---------------------------------------------------------------->
+      <div class="container-password">
+        <label class="label-text-password" for="codePostal">Votre code postal</label>
+        <div class="container-input-password">
+          <input th:field="*{codePostal}" class="input-password" type="text" placeholder="Code Postal"/>
+        </div>
+      </div>
+      <!----------------------------------------   Ville     ---------------------------------------------------------------->
+      <div class="container-password">
+        <label class="label-text-password" for="ville">Votre ville</label>
+        <div class="container-input-password">
+          <input th:field="*{ville}" class="input-password" type="text" placeholder="Ville"/>
         </div>
       </div>
       <!----------------------------------------   BUTTON SIGN IN     ---------------------------------------------------------------->

@@ -7,21 +7,19 @@ import java.util.List;
 public class Commande {
     private Long idCommande;
     private LocalDateTime dateHeureLivraison;
-    private Client client;
+    private Utilisateur utilisateur;
     private String Livraison;
     private EtatCommande etatCommande;
-    private Utilisateur utilisateur;
     private double prixTotal;
     private boolean estPayé;
     private List<DetailCommande> lignes;
 
-    public Commande(Long idCommande, LocalDateTime dateHeureLivraison, Client client, String livraison, EtatCommande etatCommande, Utilisateur utilisateur, double prixTotal, boolean estPayé, List<DetailCommande> lignes) {
+    public Commande(Long idCommande, LocalDateTime dateHeureLivraison, Utilisateur utilisateur, String livraison, EtatCommande etatCommande, double prixTotal, boolean estPayé, List<DetailCommande> lignes) {
         this.idCommande = idCommande;
         this.dateHeureLivraison = dateHeureLivraison;
-        this.client = client;
+        this.utilisateur = utilisateur;
         Livraison = livraison;
         this.etatCommande = etatCommande;
-        this.utilisateur = utilisateur;
         this.prixTotal = prixTotal;
         this.estPayé = estPayé;
         this.lignes = lignes;
@@ -70,14 +68,6 @@ public class Commande {
 
     public void setEstPayé(boolean estPayé) {
         this.estPayé = estPayé;
-    }
-
-    public Client getClient() {
-        return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
     }
 
     public EtatCommande getEtatCommande() {

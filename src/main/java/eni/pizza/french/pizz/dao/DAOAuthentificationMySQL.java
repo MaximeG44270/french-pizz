@@ -22,6 +22,10 @@ public class DAOAuthentificationMySQL implements IDAOAuthentification {
             utilisateur.setNom(rs.getString("nom"));
             utilisateur.setPrenom(rs.getString("prenom"));
             utilisateur.setEmail(rs.getString("email"));
+            utilisateur.setPassword(rs.getString("mot_de_passe"));
+            utilisateur.setRue(rs.getString("rue"));
+            utilisateur.setVille(rs.getString("ville"));
+            utilisateur.setCodePostal(rs.getInt("code_postal"));
             return utilisateur;
         }
     };
@@ -63,18 +67,25 @@ public class DAOAuthentificationMySQL implements IDAOAuthentification {
     public void saveUtilisateur(Utilisateur utilisateur) {
         if ((utilisateur.getIdUtilisateur()) != null) {
 
-            jdbcTemplate.update("UPDATE UTILISATEUR SET nom = ?, prenom = ?, email = ?, mot_de_passe = ? WHERE id_utilisateur = ?",
+            jdbcTemplate.update("UPDATE UTILISATEUR SET nom = ?, prenom = ?, email = ?, mot_de_passe = ?, rue = ?, code_postal = ?, ville = ? WHERE id_utilisateur = ?",
                     utilisateur.getNom(),
                     utilisateur.getPrenom(),
                     utilisateur.getEmail(),
-                    utilisateur.getPassword());
+                    utilisateur.getPassword(),
+                    utilisateur.getRue(),
+                    utilisateur.getCodePostal(),
+                    utilisateur.getVille(),
+                    utilisateur.getIdUtilisateur());
 
             return;
         }
-        jdbcTemplate.update("INSERT INTO UTILISATEUR (nom, prenom, email, mot_de_passe) VALUES (?, ?, ?, ?)", utilisateur.getNom(),
+        jdbcTemplate.update("INSERT INTO UTILISATEUR (nom, prenom, email, mot_de_passe, rue, code_postal, ville) VALUES (?, ?, ?, ?, ?, ?, ?)", utilisateur.getNom(),
                 utilisateur.getPrenom(),
                 utilisateur.getEmail(),
-                utilisateur.getPassword());
+                utilisateur.getPassword(),
+                utilisateur.getRue(),
+                utilisateur.getCodePostal(),
+                utilisateur.getVille());
     }
 }
 

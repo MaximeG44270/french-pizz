@@ -1,7 +1,6 @@
 package eni.pizza.french.pizz.ihm;
 
 import eni.pizza.french.pizz.bll.IAuthentificationManager;
-import eni.pizza.french.pizz.bo.Commande;
 import eni.pizza.french.pizz.bo.Utilisateur;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,7 +55,9 @@ public class UtilisateurController {
     public String addUser (Model model, RedirectAttributes redirectAttributes) {
         Utilisateur utilisateur = new Utilisateur();
 
+
         model.addAttribute("utilisateur",utilisateur);
+
         return "add-users";
 
     }
@@ -66,9 +67,10 @@ public class UtilisateurController {
             System.out.println("Erreur de contrôle surface");
             return "add-users";
         }
+        model.addAttribute("utilisateur",utilisateur);
 
         authentificationManager.saveUtilisateur(utilisateur);
-        return "redirect:/livraison";
+        return "redirect:/";
 
     }
     @GetMapping("logout")
