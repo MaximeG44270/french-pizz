@@ -9,15 +9,16 @@
 <body>
 <div layout:fragment="content">
     <div class="container-profil">
-        <h3>Votre email :</h3>
-        <p th:text="${email}"></p>
-        <h3>Votre rôle :</h3>
-        <p th:text="${authorities}"></p>
-
-
+    <div class="container-profil-title">
+        <img class="text-title-french-pizz" src="/image/french-pizz.png">
+        <img class="text-title-profil" src="/image/les-livraisons.png">
+    </div>
+    <div class="block-container-profil">
+        <p class="title-email">Votre email :</p>
+        <p class="response-title-email" th:text="${email}"></p>
+        <p class="title-role">Votre rôle :</p>
+        <p class="response-title-email" th:text="${authorities}"></p>
     </div>
 </div>
-
-
 </body>
 </html>

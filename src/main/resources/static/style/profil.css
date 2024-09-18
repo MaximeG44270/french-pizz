@@ -4,5 +4,61 @@
     align-items: center;
     margin-top: 10vh;
     margin-bottom: 10vh;
-    background-color: white;
+    background-image: url("../image/fond-grand.png");
+}
+
+.container-profil-title-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-title-french-pizz {
+    width: 41vw;
+    margin-top: 6vh;
+}
+
+.text-title-profil {
+    width: 25vw;
+}
+
+.block-container-profil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10vh;
+}
+
+.title-email {
+    font-family: poppins, sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #e1000f;
+    margin: 0;
+}
+
+.response-title-email  {
+    font-family: poppins, sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: black;
+    margin-top: 0;
+    margin-bottom: 10vh;
+}
+
+.title-role {
+    font-family: poppins, sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #e1000f;
+    margin-top: 0;
+}
+
+.response-title-email {
+    font-family: poppins, sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: black;
+    margin-top: 0;
+    margin-bottom: 10vh;
 }
