@@ -98,13 +98,18 @@ li:hover {
     margin-left: 5.5vw;
 }
 
-.icone-login {
-    width: 2vw;
-}
+ .icone-login {
+     width: 2vw;
+ }
 
-.icone-logout {
-    width: 2vw;
-}
+ .icone-logout {
+     width: 2vw;
+ }
+
+ .icone-profile {
+     width: 2vw;
+     margin-left: 3vw;
+ }
 
 .colonne-middle {
     display: flex;

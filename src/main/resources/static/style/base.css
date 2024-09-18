@@ -82,6 +82,11 @@ li:hover {
     width: 2vw;
 }
 
+.icone-profile {
+    width: 2vw;
+    margin-left: 3vw;
+}
+
 .number-header {
     font-family: poppins, sans-serif;
     font-size: 1.5rem;
