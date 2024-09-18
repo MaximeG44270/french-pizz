@@ -1,10 +1,13 @@
 package eni.pizza.french.pizz.dao;
 
-import eni.pizza.french.pizz.bo.Commande;
 import eni.pizza.french.pizz.bo.Utilisateur;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
@@ -15,6 +18,8 @@ import java.util.List;
 public class DAOAuthentificationMySQL implements IDAOAuthentification {
     @Autowired
     JdbcTemplate jdbcTemplate;
+    @Autowired
+    private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
     static final RowMapper<Utilisateur> UTILISATEUR_ROW_MAPPER = new RowMapper<Utilisateur>() {
         public Utilisateur mapRow(ResultSet rs, int rowNum) throws SQLException {
             Utilisateur utilisateur = new Utilisateur();
@@ -79,13 +84,31 @@ public class DAOAuthentificationMySQL implements IDAOAuthentification {
 
             return;
         }
-        jdbcTemplate.update("INSERT INTO UTILISATEUR (nom, prenom, email, mot_de_passe, rue, code_postal, ville) VALUES (?, ?, ?, ?, ?, ?, ?)", utilisateur.getNom(),
-                utilisateur.getPrenom(),
-                utilisateur.getEmail(),
-                utilisateur.getPassword(),
-                utilisateur.getRue(),
-                utilisateur.getCodePostal(),
-                utilisateur.getVille());
+
+        KeyHolder keyHolder = new GeneratedKeyHolder();
+        MapSqlParameterSource mapSqlParameterSource = new MapSqlParameterSource();
+        mapSqlParameterSource.addValue("new_id_utilisateur", utilisateur.getIdUtilisateur());
+        mapSqlParameterSource.addValue("new_nom", utilisateur.getNom());
+        mapSqlParameterSource.addValue("new_prenom", utilisateur.getPrenom());
+        mapSqlParameterSource.addValue("new_email", utilisateur.getEmail());
+        mapSqlParameterSource.addValue("new_mot_de_passe", utilisateur.getPassword());
+        mapSqlParameterSource.addValue("new_rue", utilisateur.getRue());
+        mapSqlParameterSource.addValue("new_code_postal", utilisateur.getCodePostal());
+        mapSqlParameterSource.addValue("new_ville", utilisateur.getVille());
+
+
+        namedParameterJdbcTemplate.update("INSERT INTO utilisateur (id_utilisateur, nom, prenom, email, mot_de_passe, rue, code_postal, ville) VALUES (:new_id_utilisateur, :new_nom, :new_prenom, :new_email, :new_mot_de_passe, :new_rue, :new_code_postal, :new_ville)", mapSqlParameterSource, keyHolder);
+
+        if(keyHolder.getKey() != null) {
+            System.out.println(keyHolder.getKey().longValue());
+            utilisateur.setIdUtilisateur(keyHolder.getKey().longValue());
+        }
+    }
+    @Override
+    public void deleteUserById(Long id)
+    {
+        int nbSuppression = jdbcTemplate.update("DELETE utilisateur FROM utilisateur WHERE id_utilisateur = ?", id);
+        System.out.println("Produit supprimé");
     }
 }
 

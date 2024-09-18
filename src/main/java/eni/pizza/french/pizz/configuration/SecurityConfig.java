@@ -48,6 +48,7 @@ public class SecurityConfig {
                                 .requestMatchers("/admin").permitAll()
                                 .requestMatchers("/").permitAll()
                                 .requestMatchers("/list-commandes").permitAll()
+                                .requestMatchers("/delete-user/**").permitAll()
                                 .requestMatchers("/home").permitAll()
                                 .requestMatchers("/login").permitAll()
                                 .requestMatchers("/user-connected").permitAll()

@@ -15,4 +15,6 @@ public interface IAuthentificationManager {
     Utilisateur getUtilisateurById(Long id);
 
     void saveUtilisateur(Utilisateur utilisateur);
+
+    void deleteUser(Long id);
 }

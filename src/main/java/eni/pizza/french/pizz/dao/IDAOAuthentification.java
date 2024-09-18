@@ -14,4 +14,6 @@ public interface IDAOAuthentification {
     Utilisateur getUtilisateurByEmail(String email);
 
     void saveUtilisateur(Utilisateur utilisateur);
+
+    void deleteUserById(Long id);
 }

@@ -2,6 +2,7 @@ package eni.pizza.french.pizz.bll;
 
 import eni.pizza.french.pizz.bo.Utilisateur;
 import eni.pizza.french.pizz.dao.IDAOAuthentification;
+import eni.pizza.french.pizz.dao.IDAORoleUtilisateur;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
@@ -12,10 +13,11 @@ import java.util.List;
 public class AuthentificationManager implements IAuthentificationManager {
    @Autowired
     IDAOAuthentification daOAuthentification;
+   @Autowired
+   IDAORoleUtilisateur daoRoleUtilisateur;
    @Override
    public Utilisateur getConnectedUtilisateurs(String email) {
-        Utilisateur connectedUtilisateur = daOAuthentification.getUtilisateurByEmail(email);
-        return connectedUtilisateur;
+        return daOAuthentification.getUtilisateurByEmail(email);
     }
     @Override
     public Utilisateur authenticate(String email, String password) {
@@ -36,5 +38,10 @@ public class AuthentificationManager implements IAuthentificationManager {
     public void saveUtilisateur(Utilisateur utilisateur) {
         utilisateur.setPassword(PasswordEncoderFactories.createDelegatingPasswordEncoder().encode(utilisateur.getPassword()));
         daOAuthentification.saveUtilisateur(utilisateur);
+        daoRoleUtilisateur.saveRolebyId(utilisateur.getIdUtilisateur());
+    }
+    @Override
+    public void deleteUser(Long id) {
+       daOAuthentification.deleteUserById(id);
     }
 }
