@@ -84,6 +84,12 @@
     height: 5vh;
 }
 
+.container-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .button-login {
     margin-top: 10vh;
     margin-bottom: 10vh;
@@ -98,4 +104,26 @@
     border-radius: 10px;
     width: 20vw;
     height: 10vh;
+}
+
+.block-button-inscrire {
+    background-color: #e1000f;
+    border-radius: 10px;
+    width: 20vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10vw;
+}
+
+.button-inscrire {
+    font-family: poppins, sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.text-link-inscrire {
+    text-decoration: none;
 }
