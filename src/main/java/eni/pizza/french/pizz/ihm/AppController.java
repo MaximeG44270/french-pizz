@@ -60,6 +60,11 @@ public class AppController {
         model.addAttribute("authorities",authorities);
         return "profil";
     }
+
+    @GetMapping("nos-pizzas")
+    public String nosPizzas(Model model) {
+        return "nos-pizzas";
+    }
 }
 
 

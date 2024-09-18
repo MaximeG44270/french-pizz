@@ -18,7 +18,7 @@
             <nav>
                 <ul>
                     <li><a href="home" class="li-modif">Accueil</a></li>
-                    <li>Nos PIZZAS</li>
+                    <li><a href="nos-pizzas" class="li-modif">Nos PIZZAS</a></li>
                     <li><a href="menu" class="li-modif">Commander</a></li>
                     <li><a href="admin" class="li-modif">Admin</a></li>
                 </ul>
@@ -32,6 +32,9 @@
                     <img src="/image/login.png" class="icone-login" alt="connection">
                 </a>
                 <a sec:authorize="isAuthenticated()" href="/logout">
+                    <img src="/image/logout.png" class="icone-logout" alt="déconnection">
+                </a>
+                <a sec:authorize="isAuthenticated()" href="/profil">
                     <img src="/image/logout.png" class="icone-logout" alt="déconnection">
                 </a>
             </div>

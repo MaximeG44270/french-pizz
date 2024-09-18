@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nos PIZZAS - French PIZZ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style/nos-pizzas.css">
+</head>
+<body>
+<header>
+  <div class="barre-haute">
+    <div class="logo">
+      <img class="image-logo" src="/image/logo-pizza.png" alt="pizz" >
+    </div>
+    <nav>
+      <ul>
+        <li><a href="home" class="li-modif">Accueil</a></li>
+        <li><a href="nos-pizzas" class="li-modif">Nos PIZZAS</a></li>
+        <li><a href="menu" class="li-modif">Commander</a></li>
+        <li><a href="admin" class="li-modif">Admin</a></li>
+      </ul>
+    </nav>
+    <div class="number-phone">
+      <img class="tel-header" src="/image/tel-header.png">
+      <p class="number-header">02 51 48 24 94</p>
+    </div>
+    <div class="connection">
+      <a sec:authorize="!isAuthenticated()" href="/login">
+        <img src="/image/login.png" class="icone-login" alt="connection">
+      </a>
+      <a sec:authorize="isAuthenticated()" href="/logout">
+        <img src="/image/logout.png" class="icone-logout" alt="déconnection">
+      </a>
+      <a sec:authorize="isAuthenticated()" href="/profil">
+        <img src="/image/logout.png" class="icone-profile" alt="déconnection">
+      </a>
+    </div>
+  </div>
+</header>
+<div class="slider">
+  <div class="slides">
+    <img class="slide" src="/image/pizza-background.png" alt="image-1">
+    <img class="slide" src="/image/pizza-background.png" alt="image-2">
+    <img class="slide" src="/image/pizza-background.png" alt="image-3">
+  </div>
+  <button class="boutton-left" onclick="prevSlide()">&#10094</button>
+  <button class="boutton-right" onclick="nextSlide()">&#10095</button>
+</div>
+<footer>
+  <div class="footer-block">
+    <div class="footer-block-1">
+      <p class="footer-block-1-home"><a href="home" class="li-modif">ACCUEIL</a></p>
+      <p class="footer-block-1-nos-pizzas">NOS PIZZAS</p>
+      <p class="footer-block-1-Menu"><a href="menu" class="li-modif">MENU</a></p>
+      <p class="footer-block-1-admin"><a href="admin" class="li-modif">ADMIN</a></p>
+    </div>
+    <div class="footer-block-2">
+      <div class="realiser-par">
+        <p class="footer-block-2-realise">Réalisé</p>
+        <p class="footer-block-2-par">par</p>
+      </div>
+      <p class="footer-block-2-paul">Paul KERLAU</p>
+      <p class="footer-block-2-maxime">Maxime GILBERT</p>
+      <p class="footer-block-2-copyright">© 2024 French PIZZ</p>
+    </div>
+    <div class="footer-block-3">
+      <p class="footer-block-3-heures">HORAIRES D'OUVERTURE</p>
+      <p class="footer-block-3-semaine">Du Dimanche au Jeudi</p>
+      <p class="footer-block-3-semaine-horaire">De 10h30 à 22h</p>
+      <p class="footer-block-3-wk">Vendredi et Samedi</p>
+      <p class="footer-block-3-wk-horaire">De 10h30 à 23h</p>
+    </div>
+    <div class="footer-block-4">
+      <p class="footer-block-4-tel">02 51 48 24 94</p>
+      <p class="footer-block-4-cgu">CGU</p>
+      <p class="footer-block-4-cgv">CGV</p>
+      <p class="footer-block-4-allergene">ALLERGENE</p>
+      <p class="footer-block-4-nous-rejoindre">NOUS REJOINDRE</p>
+    </div>
+    <div class="footer-block-5">
+      <div class="logo-footer">
+        <img class="logo-footer-img" src="/image/logo-pizza.png">
+      </div>
+      <div class="footer-text-link">
+        <div class="footer-barre-logo-reseau">
+          <div class="footer-header-twitter">
+            <a href="https://x.com" target="_blank" class="footer-image-link">
+              <img class="footer-picture-twitter" src="/image/twitter.png">
+            </a>
+          </div>
+          <div class="footer-header-instagram">
+            <a href="https://www.instagram.com" target="_blank" class="footer-image-link">
+              <img class="footer-picture-instagram" src="/image/insta.png">
+            </a>
+          </div>
+          <div class="footer-header-tiktok">
+            <a href="https://www.tiktok.com" target="_blank" class="footer-image-link">
+              <img class="footer-picture-tiktok" src="/image/tiktok.png">
+            </a>
+          </div>
+          <div class="footer-header-facebook">
+            <a href="https://www.facebook.com" target="_blank" class="footer-image-link">
+              <img class="footer-picture-facebook" src="/image/facebook.png">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="/JavaScript/nos-pizzas.js"></script>
+</body>
+</html>

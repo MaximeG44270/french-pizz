@@ -4,11 +4,11 @@
       layout:decorate="~{/base}">
 <div layout:fragment="css-title">
     <title>Profil Utilisateur</title>
-    <link rel="stylesheet" href="style/menu.css">
+    <link rel="stylesheet" href="/style/profil.css">
 </div>
 <body>
 <div layout:fragment="content">
-    <div>
+    <div class="container-profil">
         <h3>Votre email :</h3>
         <p th:text="${email}"></p>
         <h3>Votre rôle :</h3>

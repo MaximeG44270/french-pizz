@@ -52,6 +52,7 @@ public class SecurityConfig {
                                 .requestMatchers("/home").permitAll()
                                 .requestMatchers("/login").permitAll()
                                 .requestMatchers("/user-connected").permitAll()
+                                .requestMatchers("/nos-pizzas").permitAll()
                                 .requestMatchers("/menu").permitAll()
                                 .requestMatchers("/admin").permitAll()
                                 .requestMatchers("/delivery").permitAll()
@@ -64,6 +65,7 @@ public class SecurityConfig {
                                 .requestMatchers("/vendor/**").permitAll()
                                 .requestMatchers("/style/**").permitAll()
                                 .requestMatchers("/image/**").permitAll()
+                                .requestMatchers("/JavaScript/**").permitAll()
 
                                 .anyRequest().denyAll()
                 );
