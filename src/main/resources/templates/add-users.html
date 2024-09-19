@@ -10,62 +10,62 @@
 <div layout:fragment="content">
   <div class="container-connection">
     <div class="title-connection-form">
-      <img src="/image/french-pizz.png" class="img-french-pizz" alt="french-pizz">
-      <img src="/image/inscription.png" class="img-inscription" alt="inscription">
+      <img data-aos="fade-down-right" data-aos-duration="1500" src="/image/french-pizz.png" class="img-french-pizz" alt="french-pizz">
+      <img data-aos="fade-down-left" data-aos-duration="1500" src="/image/inscription.png" class="img-inscription" alt="inscription">
     </div>
     <form th:object="${utilisateur}" class="container-form" method="POST" th:action="@{/add-user}">
       <input th:field="*{idUtilisateur}" type="hidden">
       <!----------------------------------------   FIRST NAME     ---------------------------------------------------------------->
       <div class="container-first-name">
-        <label class="label-text-first-name" for="prenom">Votre prénom :</label>
+        <label data-aos="fade-right" data-aos-duration="1500" class="label-text-first-name" for="prenom">Votre prénom :</label>
         <div class="container-input-first-name">
-          <input th:field="*{prenom}" class="input-first-name" type="text" placeholder="Prénom"/>
+          <input th:field="*{prenom}" data-aos="fade-left" data-aos-duration="1500" class="input-first-name" type="text" placeholder="Prénom"/>
         </div>
       </div>
       <!----------------------------------------   LAST NAME     ---------------------------------------------------------------->
       <div class="container-last-name">
-        <label class="label-text-last-name" for="nom">Votre nom :</label>
+        <label data-aos="fade-right" data-aos-duration="1500" class="label-text-last-name" for="nom">Votre nom :</label>
         <div class="container-input-last-name">
-          <input th:field="*{nom}" class="input-last-name" type="text" placeholder="Nom de famille"/>
+          <input th:field="*{nom}" data-aos="fade-left" data-aos-duration="1500" class="input-last-name" type="text" placeholder="Nom de famille"/>
         </div>
       </div>
       <!----------------------------------------   EMAIL     ---------------------------------------------------------------->
       <div class="container-email">
-        <label class="label-text-email" for="email">Votre email</label>
+        <label data-aos="fade-right" data-aos-duration="1500" class="label-text-email" for="email">Votre email</label>
         <div class="container-input-email">
-          <input th:field="*{email}" class="input-email" type="email" placeholder="Email"/>
+          <input th:field="*{email}" data-aos="fade-left" data-aos-duration="1500" class="input-email" type="email" placeholder="Email"/>
         </div>
       </div>
       <!----------------------------------------   PASSWORD     ---------------------------------------------------------------->
       <div class="container-password">
-        <label class="label-text-password" for="password">Votre mot de passe</label>
+        <label data-aos="fade-right" data-aos-duration="1500" class="label-text-password" for="password">Votre mot de passe</label>
         <div class="container-input-password">
-          <input th:field="*{password}" class="input-password" type="password" placeholder="Mot de passe"/>
+          <input th:field="*{password}" data-aos="fade-left" data-aos-duration="1500" class="input-password" type="password" placeholder="Mot de passe"/>
         </div>
       </div>
       <!----------------------------------------   Rue     ---------------------------------------------------------------->
       <div class="container-password">
-        <label class="label-text-password" for="rue">Votre rue</label>
+        <label data-aos="fade-right" data-aos-duration="1500" class="label-text-password" for="rue">Votre rue</label>
         <div class="container-input-password">
-          <input th:field="*{rue}" class="input-password" type="text" placeholder="Rue"/>
+          <input th:field="*{rue}" data-aos="fade-left" data-aos-duration="1500" class="input-password" type="text" placeholder="Rue"/>
         </div>
       </div>
       <!----------------------------------------   Code Postal     ---------------------------------------------------------------->
       <div class="container-password">
-        <label class="label-text-password" for="codePostal">Votre code postal</label>
+        <label data-aos="fade-right" data-aos-duration="1500" class="label-text-password" for="codePostal">Votre code postal</label>
         <div class="container-input-password">
-          <input th:field="*{codePostal}" class="input-password" type="text" placeholder="Code Postal"/>
+          <input th:field="*{codePostal}" data-aos="fade-left" data-aos-duration="1500" class="input-password" type="text" placeholder="Code Postal"/>
         </div>
       </div>
       <!----------------------------------------   Ville     ---------------------------------------------------------------->
       <div class="container-password">
-        <label class="label-text-password" for="ville">Votre ville</label>
+        <label data-aos="fade-right" data-aos-duration="1500" class="label-text-password" for="ville">Votre ville</label>
         <div class="container-input-password">
-          <input th:field="*{ville}" class="input-password" type="text" placeholder="Ville"/>
+          <input th:field="*{ville}" data-aos="fade-left" data-aos-duration="1500" class="input-password" type="text" placeholder="Ville"/>
         </div>
       </div>
       <!----------------------------------------   BUTTON SIGN IN     ---------------------------------------------------------------->
-      <div class="block-sign-in">
+      <div data-aos="fade-up-right" data-aos-duration="3000" class="block-sign-in">
         <input value="S'inscrire" type="submit" class="button-sign-in"/>
       </div>
     </form>

@@ -7,7 +7,7 @@
     background-image: url("../image/fond-grand.png");
 }
 
-.container-profil-title-title {
+.container-profil-title {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,4 +61,32 @@
     color: black;
     margin-top: 0;
     margin-bottom: 10vh;
+}
+
+.button-add-produit {
+    display: flex;
+    height: 22vh;
+    width: 20vw;
+    background-color: #e1000f;
+    border-radius: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-redirect-add-produit {
+    font-family: poppins, sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.block-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-deco {
+    text-decoration: none;
 }

@@ -10,32 +10,32 @@
 <div layout:fragment="content">
     <div class="container-se-connecter">
         <div class="container-form-title">
-            <img class="text-title-french-pizz" src="/image/french-pizz.png">
-            <img class="text-title-se-connecter" src="/image/se-connecter.png">
+            <img data-aos="fade-down-right" data-aos-duration="1500" class="text-title-french-pizz" src="/image/french-pizz.png">
+            <img data-aos="fade-down-left" data-aos-duration="1500" class="text-title-se-connecter" src="/image/se-connecter.png">
         </div>
         <form method="post" th:action="@{/login}" id="loginForm">
             <!--------------------------------------   EMAIL    ---------------------------------------------------->
             <div class="container-email">
                 <div class="container-label">
-                    <label class="label-text-email" for="email">Votre email :</label>
+                    <label data-aos="fade-right" data-aos-duration="1500" class="label-text-email" for="email">Votre email :</label>
                 </div>
-                <input type="text" id="email" name="username" placeholder="email" class="input-email"/>
+                <input data-aos="fade-left" data-aos-duration="1500" type="text" id="email" name="username" placeholder="email" class="input-email"/>
             </div>
             <!--------------------------------------   PASSWORD     ---------------------------------------------------->
             <div class="container-password">
                 <div class="container-label">
-                    <label class="label-text-password" for="password">Votre mot de passe :</label>
+                    <label data-aos="fade-right" data-aos-duration="1500" class="label-text-password" for="password">Votre mot de passe :</label>
                 </div>
-                <input type="password" id="password" placeholder="password" name="password" class="input-password"/>
+                <input data-aos="fade-left" data-aos-duration="1500" type="password" id="password" placeholder="password" name="password" class="input-password"/>
             </div>
             <!--------------------------------------   BUTTON LOGIN     ---------------------------------------------------->
             <div class="container-button">
                 <a href="/add-user" class="text-link-inscrire">
-                    <div class="block-button-inscrire">
+                    <div data-aos="fade-down-left" data-aos-duration="3000" class="block-button-inscrire">
                         <p class="button-inscrire">S'inscrire</p>
                     </div>
                 </a>
-                <div class="button-login">
+                <div data-aos="fade-down-right" data-aos-duration="3000"  class="button-login">
                     <button type="submit" value="Se Connecter" id="se-connecter">Se Connecter</button>
                 </div>
             </div>

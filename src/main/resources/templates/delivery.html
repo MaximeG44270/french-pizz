@@ -10,13 +10,13 @@
 <div layout:fragment="content">
     <div class="container-command-to-delivery">
         <div class="container-delivery-title">
-            <img class="text-title-french-pizz" src="/image/french-pizz.png">
-            <img class="text-title-delivery" src="/image/les-livraisons.png">
+            <img data-aos="fade-down-right" data-aos-duration="1500" class="text-title-french-pizz" src="/image/french-pizz.png">
+            <img data-aos="fade-down-left" data-aos-duration="1500" class="text-title-delivery" src="/image/les-livraisons.png">
         </div>
         <div class="list-of-command">
             <div class="list-of-command">
                 <div class="container-command-delivery">
-                    <div th:each="commande : ${commandes}" class="container-delivery">
+                    <div th:each="commande : ${commandes}" data-aos="fade-right" data-aos-duration="1500" class="container-delivery">
                         <a th:href="@{'/commande-detail/' + ${commande.idCommande}}" class="link-container-command-delivery">
                             <div class="bloc-text-id-commande">
                                 <p th:text="${commande.idCommande}" class="text-id-commande"></p>

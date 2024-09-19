@@ -10,20 +10,20 @@
 <div layout:fragment="content">
         <div class="container-add-produit">
             <div class="title-add-produit-form">
-                <img src="/image/french-pizz.png" class="img-french-pizz" alt="french-pizz">
-                <img src="/image/ajouter-un-produit.png" class="img-ajouter-produit" alt="ajouter-produit">
+                <img data-aos="fade-down-right" data-aos-duration="1500" src="/image/french-pizz.png" class="img-french-pizz" alt="french-pizz">
+                <img data-aos="fade-down-left" data-aos-duration="1500" src="/image/ajouter-un-produit.png" class="img-ajouter-produit" alt="ajouter-produit">
             </div>
             <form th:object="${produit}" class="container-form" method="POST" th:action="@{/add-produit}">
         <!----------------------------------------   NAME     ---------------------------------------------------------------->
                 <div class="container-name">
-                    <label class="label-text-name" for="nom">Nom du produit</label>
+                    <label data-aos="fade-right" data-aos-duration="1500" class="label-text-name" for="nom">Nom du produit</label>
                     <div class="container-input-name">
-                        <input th:field="*{nom}" class="input-name" type="text" placeholder="Nom produit"/>
+                        <input th:field="*{nom}" data-aos="fade-left" data-aos-duration="1500" class="input-name" type="text" placeholder="Nom produit"/>
                     </div>
                 </div>
                 <!----------------------------------------   idTypeProduit     ---------------------------------------------------------------->
                 <div class="container-itproduit">
-                    <label class="label-text-itproduit" for="type_produit">Choisissez le type de produit</label>
+                    <label data-aos="fade-right" data-aos-duration="1500" class="label-text-itproduit" for="type_produit">Choisissez le type de produit</label>
                     <div class="container-option-itproduit">
                         <select th:field="*{typeProduit}" class="select-itproduit" aria-label="Select">
                             <option class="option-1-itproduit" value="" selected>Liste des types de produits</option>
@@ -33,27 +33,27 @@
                 </div>
                 <!----------------------------------------   Description Produit     ---------------------------------------------------------------->
                 <div class="container-description-produit">
-                    <label class="label-text-description-produit" for="description">Description du produit</label>
+                    <label data-aos="fade-right" data-aos-duration="1500" class="label-text-description-produit" for="description">Description du produit</label>
                     <div class="container-input-description-produit">
-                        <input th:field="*{description}" class="input-description-produit" type="text" placeholder="Description du produit"/>
+                        <input th:field="*{description}" data-aos="fade-left" data-aos-duration="1500" class="input-description-produit" type="text" placeholder="Description du produit"/>
                     </div>
                 </div>
                 <!----------------------------------------   PRICE     ---------------------------------------------------------------->
                 <div class="container-price">
-                    <label class="label-text-price" for="prix">Quel est le prix du produit</label>
+                    <label data-aos="fade-right" data-aos-duration="1500" class="label-text-price" for="prix">Quel est le prix du produit</label>
                     <div class="container-input-price">
-                        <input th:field="*{prix}" class="input-price" placeholder="prix en €"/>
+                        <input th:field="*{prix}" data-aos="fade-left" data-aos-duration="1500" class="input-price" placeholder="prix en €"/>
                     </div>
                 </div>
                 <!----------------------------------------   LINK PICTURE     ---------------------------------------------------------------->
                 <div class="container-link-picture">
-                    <label class="label-text-link-picture" for="image_url">Lien de l'image</label>
+                    <label data-aos="fade-right" data-aos-duration="1500" class="label-text-link-picture" for="image_url">Lien de l'image</label>
                     <div class="container-textarea-link-picture">
-                        <textarea th:field="*{image_url}" class="textarea-link-picture"></textarea>
+                        <textarea th:field="*{image_url}" data-aos="fade-left" data-aos-duration="1500" class="textarea-link-picture"></textarea>
                     </div>
                 </div>
                 <!----------------------------------------   BUTTON     ---------------------------------------------------------------->
-                <div class="block-button-ajouter">
+                <div data-aos="fade-up-right" data-aos-duration="3000" class="block-button-ajouter">
                     <input value="Ajouter le produit" type="submit" class="button-ajouter"/>
                 </div>
             </form>
