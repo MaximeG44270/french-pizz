@@ -22,10 +22,11 @@
             <p th:text="${produit.prix} + ' €'" class="text-price"></p>
           </div>
           <p th:text="${produit.nom}" class="text-title-pizza"></p>
-          <div class="button">
-            <input type="number" value="Envoyer" min="0" class="input-number-pizza"/>
-            <button type="submit" value="Envoyer" id="commander">Commander</button>
-          </div>
+        </div>
+        <div class="button">
+          <button type="submit" value="Envoyer" id="delete">X</button>
+          <input type="number" placeholder="Quantité :" value="Envoyer" min="0" class="input-number-pizza"/>
+          <button type="submit" value="Envoyer" id="commander">Commander</button>
         </div>
       </div>
     </div>
