@@ -3,21 +3,21 @@
       xmlns:th="http://www.thymeleaf.org"
       layout:decorate="~{/base}">
 <div layout:fragment="css-title">
-    <title>Profil Utilisateur</title>
+    <title>Profil - French PIZZ</title>
     <link rel="stylesheet" href="/style/profil.css">
 </div>
 <body>
 <div layout:fragment="content">
     <div class="container-profil">
     <div class="container-profil-title">
-        <img class="text-title-french-pizz" src="/image/french-pizz.png">
-        <img class="text-title-profil" src="/image/les-livraisons.png">
+        <img data-aos="fade-down-right" data-aos-duration="1500" class="text-title-french-pizz" src="/image/french-pizz.png">
+        <img data-aos="fade-down-left" data-aos-duration="1500" class="text-title-profil" src="/image/les-livraisons.png">
     </div>
     <div class="block-container-profil">
-        <p class="title-email">Votre email :</p>
-        <p class="response-title-email" th:text="${email}"></p>
-        <p class="title-role">Votre rôle :</p>
-        <p class="response-title-email" th:text="${authorities}"></p>
+        <p data-aos="fade-right" data-aos-duration="1500" class="title-email">Votre email :</p>
+        <p data-aos="fade-left" data-aos-duration="1500" class="response-title-email" th:text="${email}"></p>
+        <p data-aos="fade-right" data-aos-duration="1500" class="title-role">Votre rôle :</p>
+        <p data-aos="fade-left" data-aos-duration="1500" class="response-title-email" th:text="${authorities}"></p>
     </div>
         <div class="block-button">
         <a class="text-deco" href="add-produit">
