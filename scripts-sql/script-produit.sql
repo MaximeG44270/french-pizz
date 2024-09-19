@@ -13,13 +13,13 @@ INSERT INTO produit (id_produit, nom, description, prix, image_url, TYPE_PRODUIT
 
 -- Insertion de 10 boissons
 INSERT INTO produit (id_produit, nom, description, prix, image_url, TYPE_PRODUIT_id_type_produit) VALUES
-(11, 'Coca-Cola', 'Boisson gazeuse classique', 4.50, 'https://i.postimg.cc/Gp2Zj20N/coca.png', 2),
-(12, 'Sprite', 'Boisson gazeuse au citron', 5.00, 'https://i.postimg.cc/HsnXd1gm/sprite.png', 2),
-(13, 'Fanta', 'Boisson gazeuse à l\'orange', 4.75, 'https://i.postimg.cc/R0D2pB40/fanta.png', 2),
+(11, 'Coca-Cola', 'Boisson gazeuse classique', 4.50, 'https://i.postimg.cc/NjyM9Ftk/pngegg-2.png', 2),
+(12, 'Sprite', 'Boisson gazeuse au citron', 5.00, 'https://i.postimg.cc/c4vZTzzs/pngegg-4.png', 2),
+(13, 'Fanta', 'Boisson gazeuse à l\'orange', 4.75, 'https://i.postimg.cc/3RhJcZvt/pngegg-3.png', 2),
 (14, 'Orangina', 'Boisson gazeuse à l\'orange', 4.00, 'https://i.postimg.cc/s2kwZD35/orangina.png', 2),
 (15, 'Oasis', 'Boisson exotique', 6.50, 'https://i.postimg.cc/J0W6S7gR/oasis.png', 2),
 (16, 'Pepsi', 'Boisson gazeuse classique', 4.50, 'https://i.postimg.cc/sg8JtDQb/pepsi.png', 2),
 (17, 'Schweppes', 'Boisson gazeuse au agrum', 5.00, 'https://i.postimg.cc/T2CgzYBQ/schweppes.png', 2),
-(18, 'Red Bull', 'Boisson énergisante', 4.75, 'https://i.postimg.cc/4yJvzYqH/red-bull.png', 2),
+(18, 'Red Bull', 'Boisson énergisante', 4.75, 'https://i.postimg.cc/Xvk0p6rg/pngegg-5.png', 2),
 (19, '7up', 'Boisson gazeuse au citron', 4.00, 'https://i.postimg.cc/1XNCjnMC/7up.png', 2),
-(20, 'Capri-Sun', 'Jus de fruits frais', 6.50, 'https://i.postimg.cc/bwThTWZG/caprisun.png', 2);
+(20, 'Capri-Sun', 'Jus de fruits frais', 6.50, 'https://i.postimg.cc/vHxF5V1T/pngegg-6.png', 2);
