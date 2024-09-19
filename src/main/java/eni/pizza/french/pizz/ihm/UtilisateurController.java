@@ -28,6 +28,7 @@ public class UtilisateurController {
     }
     @GetMapping("user-connected")
     public String userConnected(Principal principal, Model model, RedirectAttributes redirectAttributes) {
+        System.out.println("userConnected");
         String email = principal.getName();
         Utilisateur utilisateur = authentificationManager.getConnectedUtilisateurs(email);
         if (utilisateur == null) {

@@ -56,7 +56,7 @@ public class ProduitController {
 
         produitManager.saveProduit(produit);
 
-        return "redirect:/add-produit-page";
+        return "redirect:/";
     }
     @GetMapping("delete-produit/{id}")
     public String deleteProduit(@PathVariable Long id, Model model, RedirectAttributes redirectAttributes) {

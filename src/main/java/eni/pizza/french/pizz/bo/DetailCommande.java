@@ -5,7 +5,7 @@ public class DetailCommande {
     private Commande commande;
     private Produit produit;
 
-    public DetailCommande(Produit produit, Commande commande, int quantity) {
+    public DetailCommande(int quantity, Commande commande, Produit produit) {
         this.produit = produit;
         this.commande = commande;
         this.quantity = quantity;

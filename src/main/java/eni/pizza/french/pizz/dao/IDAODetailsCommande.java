@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface IDAODetailsCommande {
     List<DetailCommande> selectDetailCommandeById(Long id);
+
+    void saveDetailCommande(DetailCommande detailCommande);
 }
