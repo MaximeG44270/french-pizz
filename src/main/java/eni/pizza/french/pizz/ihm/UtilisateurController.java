@@ -35,11 +35,11 @@ public class UtilisateurController {
             System.out.println("Vous n'avez pas réussi à vous connecter");
             return "redirect:/login";
         }
-        model.addAttribute("utilisateur",utilisateur);
+        model.addAttribute("connectedUser",utilisateur);
         System.out.printf("L'utilisateur ayant l'email %s est connecté.",utilisateur.getEmail());
         return "redirect:/home";
     }
-    @PostMapping("login")
+ /*   @PostMapping("login")
     public String processLogin(@Valid @ModelAttribute(name="utilisateur") Utilisateur utilisateur, BindingResult bindingResult, Model model, RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()){
             System.out.println("Erreur de contrôle surface");
@@ -47,7 +47,7 @@ public class UtilisateurController {
         }
         authentificationManager.authenticate(utilisateur.getEmail(), utilisateur.getPassword());
         return "redirect:/";
-    }
+    }*/
 
     @GetMapping("add-user")
     public String addUser (Model model, RedirectAttributes redirectAttributes) {

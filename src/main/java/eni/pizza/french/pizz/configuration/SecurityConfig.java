@@ -37,12 +37,6 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests((authorize) -> authorize
 
-                                .requestMatchers(HttpMethod.GET,"/add-produit/**").permitAll()
-                                .requestMatchers(HttpMethod.POST,"/add-produit/**").permitAll()
-                                .requestMatchers(HttpMethod.GET,"/add-user/**").permitAll()
-                                .requestMatchers(HttpMethod.POST,"/add-user/**").permitAll()
-                                .requestMatchers(HttpMethod.GET,"/login/**").permitAll()
-                                .requestMatchers(HttpMethod.POST,"/login/**").permitAll()
                                 .requestMatchers("add-produit/**").permitAll()
                                 .requestMatchers("/add-user/**").permitAll()
                                 .requestMatchers("/admin").permitAll()
@@ -67,12 +61,12 @@ public class SecurityConfig {
                                 .requestMatchers("/image/**").permitAll()
                                 .requestMatchers("/JavaScript/**").permitAll()
 
-                                .anyRequest().denyAll()
+                                .anyRequest().permitAll()
                 );
 
         http.formLogin(form -> form.loginPage("/login")
                 // permet le retour vers la page url  "" en cas de succès de connexion
-                .defaultSuccessUrl("/user-connected"));
+                .defaultSuccessUrl("/user-connected").permitAll());
 
         HeaderWriterLogoutHandler clearSiteData = new HeaderWriterLogoutHandler(new ClearSiteDataHeaderWriter(ClearSiteDataHeaderWriter.Directive.ALL));
 

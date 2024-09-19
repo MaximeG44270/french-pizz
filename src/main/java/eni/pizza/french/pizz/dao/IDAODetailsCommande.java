@@ -9,4 +9,6 @@ public interface IDAODetailsCommande {
     List<DetailCommande> selectDetailCommandeById(Long id);
 
     void saveDetailCommande(DetailCommande detailCommande);
+
+    void supprimerDetailCommande(Long id_produit, Long id_commande);
 }

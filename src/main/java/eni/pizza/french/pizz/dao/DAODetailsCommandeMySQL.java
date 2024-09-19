@@ -55,9 +55,10 @@ public class DAODetailsCommandeMySQL implements IDAODetailsCommande {
         namedParameterJdbcTemplate.update(sql, mapSqlParameterSource);
 
     }
-
-    public void supprimerProduit(DetailCommande detailCommande) {
-//        detailCommandes.remove(detailCommande);
+    @Override
+    public void supprimerDetailCommande(Long id_produit, Long id_commande) {
+        int nbSuppression = jdbcTemplate.update("DELETE detail_commande FROM detail_commande WHERE PRODUIT_id_produit = ? && COMMANDE_id_commande = ?", id_produit, id_commande);
+        System.out.println("Ligne supprimée");
     }
 
 }

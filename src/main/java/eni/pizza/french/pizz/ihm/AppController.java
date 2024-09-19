@@ -2,6 +2,7 @@ package eni.pizza.french.pizz.ihm;
 
 import eni.pizza.french.pizz.bll.ICommandesManager;
 import eni.pizza.french.pizz.bll.ProduitManager;
+import eni.pizza.french.pizz.bo.DetailCommande;
 import eni.pizza.french.pizz.bo.Produit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -10,10 +11,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.ArrayList;
 import java.util.List;
 
+@SessionAttributes({"connectedUser"})
 @Controller
 public class AppController {
 
@@ -33,10 +37,11 @@ public class AppController {
     }
 
     @GetMapping("menu")
-    public String menuPage(Model model) {
+    public String menuPage(Model model, RedirectAttributes redirectAttributes) {
         List<Produit> produits = produitManager.getAllProduits();
-
+        List<DetailCommande> dc = new ArrayList <DetailCommande>();
         model.addAttribute("produits", produits);
+        model.addAttribute("detailCommandes", dc);
 
         return "menu";
     }
@@ -47,7 +52,7 @@ public class AppController {
     }
 
     @GetMapping("delivery")
-    public String deliveryPage(Model model, RedirectAttributes redirectAttributes) {
+    public String deliveryPage() {
 
         return "delivery";
     }
