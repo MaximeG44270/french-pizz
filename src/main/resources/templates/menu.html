@@ -9,11 +9,11 @@
 <body>
 <div layout:fragment="content">
   <div class="container-notre-carte">
-    <img src="/image/french-pizz.png" class="picture-french-pizz">
+    <img data-aos="fade-down-right" data-aos-duration="1500" src="/image/french-pizz.png" class="picture-french-pizz">
   </div>
   <div class="container-pizza-list">
     <div class="pizza-container">
-      <div class="content" th:each="produit: ${produits}">
+      <div data-aos="fade-right" data-aos-duration="1500" class="content" th:each="produit: ${produits}">
         <div class="fond-presentation">
           <div class="rond-presentation">
             <img th:src="@{${produit.image_url}}" class="picture-size" alt="pizza Image"/>
@@ -23,7 +23,7 @@
           </div>
           <p th:text="${produit.nom}" class="text-title-pizza"></p>
           <div class="button">
-            <select
+            <input type="number" value="Envoyer" min="0" class="input-number-pizza"/>
             <button type="submit" value="Envoyer" id="commander">Commander</button>
           </div>
         </div>
