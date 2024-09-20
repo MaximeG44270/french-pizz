@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout/base}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+
+<title layout:fragment="title">Panier</title>
+<div layout:fragment="content">
+    <body>
+    <h1>Commandes</h1>
+
+    <!-- Formulaire de filtre pour les états -->
+    <form th:action="@{/commandes}" method="get">
+        <label>
+            <input type="checkbox" name="etatIds" value="1"
+                   th:checked="${etatId} == 1"> Panier
+        </label>
+        <label>
+            <input type="checkbox" name="etatIds" value="2"
+                   th:checked="${etatId} == 2"> En préparation
+        </label>
+        <label>
+            <input type="checkbox" name="etatIds" value="3"
+                   th:checked="${etatId} == 3"> En livraison
+        </label>
+        <label>
+            <input type="checkbox" name="etatIds" value="4"
+                   th:checked="${etatId} == 4"> Commande terminée
+        </label>
+        <button type="submit">Filtrer</button>
+    </form>
+    <table>
+        <tbody>
+        <tr th:each="commande : ${commandes}">
+            <td th:text="${commande.id}"></td>
+            <td th:text="${commande.date}"></td>
+            <td th:text="${commande.heure}"></td>
+            <td th:text="${commande.livraison}"></td>
+            <td th:text="${commande.prixTotal}"></td>
+            <td th:text="${commande.montantPaye}"></td>
+            <td th:text="${commande.etatCommande.libelle}"></td>
+            <td>
+                <form th:action="@{/updateEtatCommande}" method="post">
+                    <input type="hidden" name="commandeId" th:value="${commande.id}">
+                    <input type="hidden" name="livraison" th:value="${commande.livraison}">
+                    <!--                    <button type="submit" th:text="${commande.livraison} ? 'Prête' : 'Livrée'"></button>-->
+                    <button type="submit" th:text="${commande.etatCommande.id == 2 ? (commande.livraison ? 'Prête' : 'Terminer') : (commande.etatCommande.id == 3 ? 'Livrée' : '---')}"></button>
+                </form>
+            </td>
+            <td>
+                <ul>
+                    <li th:each="detailCommande : ${commande.detailCommandes}">
+                        <span th:text="${detailCommande.produit.nom}"></span> (<span
+                            th:text="${detailCommande.quantite}"></span>)
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    </body>
+</div>
+</html>

@@ -24,7 +24,7 @@ public class DAOCommandesMySQL implements IDAOCommandes {
             Utilisateur utilisateur = new Utilisateur();
             utilisateur.setIdUtilisateur(rs.getLong("UTILISATEUR_id_utilisateur"));
             commande.setUtilisateur(utilisateur);
-            commande.setLivraison(rs.getString("livraison"));
+            commande.setLivraison(rs.getInt("livraison"));
             EtatCommande etatCommande = new EtatCommande();
             etatCommande.setIdEtat(rs.getLong("ETAT_id_etat"));
             commande.setEtatCommande(etatCommande);
@@ -69,14 +69,14 @@ public class DAOCommandesMySQL implements IDAOCommandes {
         mapSqlParameterSource.addValue("new_date_heure_livraison", commande.getDateHeureLivraison());
         mapSqlParameterSource.addValue("new_id_utilisateur", commande.getUtilisateur().getIdUtilisateur());
         mapSqlParameterSource.addValue("new_livraison", commande.getLivraison());
-        mapSqlParameterSource.addValue("new_etat_commande", commande.getEtatCommande().getLibelle());
+        mapSqlParameterSource.addValue("new_id_etat_commande", commande.getEtatCommande().getIdEtat());
         mapSqlParameterSource.addValue("new_prix_total", commande.getPrixTotal());
-        mapSqlParameterSource.addValue("new_est_payé", commande.isEstPayé());
+        mapSqlParameterSource.addValue("new_est_paye", commande.isEstPayé());
 
         if(selectCommandeById(commande.getIdCommande()) != null){
-            sql= "UPDATE commande SET date_heure_livraison = :new_date_heure_livraison, UTILISATEUR_id_utilisateur = :new_id_utilisateur, livraison = :new_livraison, COMMANDE_etat_commande = :new_etat_commande, prix_total = :new_prix_total, est_payé = :new_est_payé,  WHERE id_commande = :new_id_commande";
+            sql= "UPDATE commande SET date_heure_livraison = :new_date_heure_livraison, UTILISATEUR_id_utilisateur = :new_id_utilisateur, livraison = :new_livraison, ETAT_id_etat = :new_id_etat_commande, prix_total = :new_prix_total, est_paye = :new_est_paye  WHERE id_commande = :new_id_commande";
         } else {
-            sql = "INSERT INTO commande (id_commande, date_heure_livraison, UTILISATEUR_id_utilisateur, livraison, COMMANDE_etat_commande, prix_total, est_payé) VALUES (:new_id_commande, :new_date_heure_livraison, :new_id_utilisateur, :new_livraison, :new_etat_commande, :new_prix_total, :new_est_payé)";
+            sql = "INSERT INTO commande (id_commande, date_heure_livraison, UTILISATEUR_id_utilisateur, livraison, ETAT_id_etat, prix_total, est_paye) VALUES (:new_id_commande, :new_date_heure_livraison, :new_id_utilisateur, :new_livraison, :new_id_etat_commande, :new_prix_total, :new_est_paye)";
         }
 
         namedParameterJdbcTemplate.update(sql, mapSqlParameterSource);
@@ -88,4 +88,6 @@ public class DAOCommandesMySQL implements IDAOCommandes {
         int nbSuppression = jdbcTemplate.update("DELETE commande FROM commande WHERE id_commande = ?", id);
         System.out.println("Commande supprimée");
     }
+
+
 }

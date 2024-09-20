@@ -8,17 +8,17 @@ public class Commande {
     private Long idCommande;
     private LocalDateTime dateHeureLivraison;
     private Utilisateur utilisateur;
-    private String Livraison;
+    private int livraison;
     private EtatCommande etatCommande;
     private double prixTotal;
     private boolean estPayé;
     private List<DetailCommande> lignes;
 
-    public Commande(Long idCommande, LocalDateTime dateHeureLivraison, Utilisateur utilisateur, String livraison, EtatCommande etatCommande, double prixTotal, boolean estPayé, List<DetailCommande> lignes) {
+    public Commande(Long idCommande, LocalDateTime dateHeureLivraison, Utilisateur utilisateur, int livraison, EtatCommande etatCommande, double prixTotal, boolean estPayé, List<DetailCommande> lignes) {
         this.idCommande = idCommande;
         this.dateHeureLivraison = dateHeureLivraison;
         this.utilisateur = utilisateur;
-        Livraison = livraison;
+        this.livraison = livraison;
         this.etatCommande = etatCommande;
         this.prixTotal = prixTotal;
         this.estPayé = estPayé;
@@ -46,12 +46,12 @@ public class Commande {
         this.dateHeureLivraison = dateHeureLivraison;
     }
 
-    public String getLivraison() {
-        return Livraison;
+    public int getLivraison() {
+        return livraison;
     }
 
-    public void setLivraison(String livraison) {
-        Livraison = livraison;
+    public void setLivraison(int livraison) {
+        livraison = livraison;
     }
 
     public double getPrixTotal() {

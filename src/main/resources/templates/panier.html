@@ -2,10 +2,20 @@
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:th="http://www.thymeleaf.org"
       layout:decorate="~{/base}">
-<head>
-    <meta charset="UTF-8">
-    <title>Panier</title>
-</head>
+<div layout:fragment="css-title">
+    <title>Panier - French PIZZ</title>
+    <link rel="stylesheet" href="style/panier.css">
+</div>
 <body>
+<div layout:fragment="content">
+    <h1>Votre Panier</h1>
+    <ul>
+        <li th:each="dc : ${panier.detailCommandes}">
+            <span th:text="${dc.produit.nom}"></span> -
+            <span th:text="${dc.quantity}"></span> -
+            <span th:text="${dc.produit.prix}"></span>
+        </li>
+    </ul>
+</div>
 </body>
 </html>

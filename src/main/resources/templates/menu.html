@@ -24,9 +24,13 @@
           <p th:text="${produit.nom}" class="text-title-pizza"></p>
         </div>
         <div class="button">
-          <button type="submit" value="Envoyer" id="delete">X</button>
-          <input type="number" placeholder="Quantité :" min="0" class="input-number-pizza"/>
+          <form method="post" th:object="${detailCommandes}" th:action="@{'/commander/' + ${commande.idCommande}}">
+<!--            <input name="id_commande" type="hidden" th:value="">-->
+          <input type="hidden" name="id" th:value="${produit.idProduit}"/>
+<!--          <button type="submit" value="Envoyer" id="delete">X</button>-->
+          <input type="number" placeholder="Quantité :" name="quantity" min="0" class="input-number-pizza"/>
           <button type="submit" value="Envoyer" id="commander">Commander</button>
+          </form>
         </div>
       </div>
     </div>
